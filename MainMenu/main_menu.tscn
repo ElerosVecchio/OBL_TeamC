@@ -1,0 +1,71 @@
+[gd_scene load_steps=3 format=3 uid="uid://cd0xyan3slpu3"]
+
+[ext_resource type="Script" path="res://MainMenu/main_menu.gd" id="1_j3xqe"]
+[ext_resource type="Texture2D" uid="uid://2ib1xy6g3yy5" path="res://icon.svg" id="2_xy1mj"]
+
+[node name="MainMenu" type="Node2D"]
+position = Vector2(577, 463)
+script = ExtResource("1_j3xqe")
+
+[node name="MainMenuCanvas" type="CanvasLayer" parent="."]
+
+[node name="btn_play" type="Button" parent="MainMenuCanvas"]
+anchors_preset = -1
+anchor_left = 0.441
+anchor_top = 0.591
+anchor_right = 0.562
+anchor_bottom = 0.684
+offset_left = -0.0320129
+offset_top = 0.0319824
+offset_right = 0.575928
+offset_bottom = -0.231964
+action_mode = 0
+text = "PLAY"
+metadata/_edit_use_anchors_ = true
+
+[node name="btn_quit" type="Button" parent="MainMenuCanvas"]
+anchors_preset = -1
+anchor_left = 0.441
+anchor_top = 0.713
+anchor_right = 0.56
+anchor_bottom = 0.804
+offset_left = -0.0320129
+offset_top = -0.0240479
+offset_right = 0.880005
+offset_bottom = 0.00799561
+action_mode = 0
+text = "QUIT"
+metadata/_edit_use_anchors_ = true
+
+[node name="btn_options" type="Button" parent="MainMenuCanvas"]
+anchors_preset = -1
+anchor_left = 0.441
+anchor_top = 0.833
+anchor_right = 0.561
+anchor_bottom = 0.923
+offset_left = -0.0320435
+offset_top = 0.215942
+offset_right = -0.272034
+offset_bottom = -0.104065
+action_mode = 0
+text = "OPTIONS"
+metadata/_edit_use_anchors_ = true
+
+[node name="title_image" type="TextureRect" parent="MainMenuCanvas"]
+editor_description = "Placeholder Title Image
+"
+anchors_preset = -1
+anchor_left = 0.366
+anchor_top = 0.079
+anchor_right = 0.637
+anchor_bottom = 0.552
+offset_left = 0.367981
+offset_top = -0.192001
+offset_right = 0.175964
+offset_bottom = 0.303955
+texture = ExtResource("2_xy1mj")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="MainMenuCanvas/btn_play" to="." method="on_play_button_pressed"]
+[connection signal="pressed" from="MainMenuCanvas/btn_quit" to="." method="on_quit_button_pressed"]
+[connection signal="pressed" from="MainMenuCanvas/btn_options" to="." method="on_options_button_pressed"]

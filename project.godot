@@ -12,5 +12,6 @@ config_version=5
 
 config/name="OBL_TeamC"
 config/description="One Boss Left Team C"
+run/main_scene="res://MainMenu/main_menu.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
