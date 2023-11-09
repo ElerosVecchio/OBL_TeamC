@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cd0xyan3slpu3"]
 
 [ext_resource type="Script" path="res://MainMenu/main_menu.gd" id="1_j3xqe"]
-[ext_resource type="Texture2D" uid="uid://2ib1xy6g3yy5" path="res://icon.svg" id="2_xy1mj"]
+[ext_resource type="Texture2D" uid="uid://dpe0ckn6typcr" path="res://icon.svg" id="2_xy1mj"]
 
 [node name="MainMenu" type="Node2D"]
 position = Vector2(577, 463)

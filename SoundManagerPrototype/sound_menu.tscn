@@ -1,0 +1,109 @@
+[gd_scene load_steps=8 format=3 uid="uid://cov0817bjoqbe"]
+
+[ext_resource type="Script" path="res://SoundManagerPrototype/SoundMenu.gd" id="1_51f5b"]
+[ext_resource type="AudioStream" uid="uid://c2ispjsd7g5de" path="res://SoundManagerPrototype/ukulele-fun-background-113443.mp3" id="2_qbuy4"]
+[ext_resource type="AudioStream" uid="uid://dme4w1eqp8v0i" path="res://SoundManagerPrototype/fire-magic-6947.mp3" id="3_ykogi"]
+[ext_resource type="AudioStream" uid="uid://b8bdmkipxp3m1" path="res://SoundManagerPrototype/sword-hit-7160.mp3" id="4_oflpr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ainr"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_esoeo"]
+bg_color = Color(0.6, 0.6, 0.282353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8n4d4"]
+bg_color = Color(0.6, 0.6, 1, 1)
+
+[node name="SoundMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_51f5b")
+
+[node name="MusicLoopPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_qbuy4")
+autoplay = true
+
+[node name="Music Slider" type="Control" parent="."]
+anchors_preset = 0
+offset_left = -4.0
+offset_top = -6.0
+offset_right = 40.0
+offset_bottom = 37.0
+
+[node name="SliderBackground" type="ColorRect" parent="Music Slider"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 93.0
+offset_right = 64.0
+offset_bottom = 295.0
+color = Color(0, 0, 0, 1)
+
+[node name="Slider" type="VSlider" parent="Music Slider"]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 109.0
+offset_right = 53.0
+offset_bottom = 280.0
+theme_override_styles/slider = SubResource("StyleBoxFlat_2ainr")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_esoeo")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_8n4d4")
+min_value = -30.0
+max_value = 0.0
+
+[node name="Sound Slider" type="Control" parent="."]
+anchors_preset = 0
+offset_left = -19.0
+offset_top = -12.0
+offset_right = 40.0
+offset_bottom = 37.0
+
+[node name="SliderBackground" type="ColorRect" parent="Sound Slider"]
+layout_mode = 0
+offset_left = 1105.0
+offset_top = 74.0
+offset_right = 1145.0
+offset_bottom = 276.0
+color = Color(0, 0, 0, 1)
+
+[node name="Slider" type="VSlider" parent="Sound Slider"]
+layout_mode = 0
+offset_left = 1119.0
+offset_top = 90.0
+offset_right = 1135.0
+offset_bottom = 261.0
+theme_override_styles/slider = SubResource("StyleBoxFlat_2ainr")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_esoeo")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_8n4d4")
+min_value = -30.0
+max_value = 0.0
+
+[node name="sound_effect_one" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ykogi")
+
+[node name="sound_effect_two" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_oflpr")
+
+[node name="TestButtonOne" type="Button" parent="."]
+layout_mode = 0
+offset_left = 398.0
+offset_top = 58.0
+offset_right = 624.0
+offset_bottom = 140.0
+text = "Whoosh"
+
+[node name="TestButtonOne2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 199.0
+offset_right = 634.0
+offset_bottom = 281.0
+text = "Sword"
+
+[connection signal="value_changed" from="Music Slider/Slider" to="." method="_on_v_slider_value_changed"]
+[connection signal="value_changed" from="Sound Slider/Slider" to="." method="_on_slider_value_changed"]
+[connection signal="button_down" from="TestButtonOne" to="." method="_on_test_button_one_button_down"]
+[connection signal="button_down" from="TestButtonOne2" to="." method="_on_test_button_one_2_button_down"]

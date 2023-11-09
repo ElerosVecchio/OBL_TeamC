@@ -15,3 +15,7 @@ config/description="One Boss Left Team C"
 run/main_scene="res://MainMenu/main_menu.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="res://SoundManagerPrototype/default_bus_layout.tres"
