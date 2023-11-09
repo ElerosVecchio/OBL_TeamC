@@ -26,6 +26,7 @@ script = ExtResource("1_51f5b")
 [node name="MusicLoopPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_qbuy4")
 autoplay = true
+bus = &"Music"
 
 [node name="Music Slider" type="Control" parent="."]
 anchors_preset = 0
@@ -83,9 +84,11 @@ max_value = 0.0
 
 [node name="sound_effect_one" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_ykogi")
+bus = &"SoundEffects"
 
 [node name="sound_effect_two" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_oflpr")
+bus = &"SoundEffects"
 
 [node name="TestButtonOne" type="Button" parent="."]
 layout_mode = 0
