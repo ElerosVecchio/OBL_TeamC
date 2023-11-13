@@ -1,0 +1,106 @@
+{
+  "10002": {
+	"Name": "Health Potion",
+	"Category": "Potion",
+	"Stackable": true,
+	"Attack": null,
+	"Defense": null,
+	"Health Regen": 10
+  },
+  "10003": {
+	"Name": "Strength Potion",
+	"Category": "Potion",
+	"Stackable": true,
+	"Attack": 25,
+	"Defense": null,
+	"Health Regen": null
+  },
+  "10004": {
+	"Name": "Invisible Cloak",
+	"Category": "Armor",
+	"Stackable": false,
+	"Attack": null,
+	"Defense": 50,
+	"Health Regen": null
+  },
+  "10005": {
+	"Name": "AP Booster",
+	"Category": "Power Up",
+	"Stackable": false,
+	"Attack": null,
+	"Defense": null,
+	"Health Regen": null
+  },
+  "10006": {
+	"Name": "Hammer",
+	"Category": "Weapon",
+	"Stackable": false,
+	"Attack": 100,
+	"Defense": null,
+	"Health Regen": null
+  },
+  "10007": {
+	"Name": "Backpack",
+	"Category": "Armor",
+	"Stackable": false,
+	"Attack": null,
+	"Defense": 10,
+	"Health Regen": null
+  },
+  "10008": {
+	"Name": "Dmg Up",
+	"Category": "Power Up",
+	"Stackable": true,
+	"Attack": 25,
+	"Defense": null,
+	"Health Regen": null
+  },
+  "10009": {
+	"Name": "Def Up",
+	"Category": "Power Up",
+	"Stackable": true,
+	"Attack": null,
+	"Defense": 25,
+	"Health Regen": null
+  },
+  "10011": {
+	"Name": "Poison",
+	"Category": "DoT",
+	"Stackable": false,
+	"Attack": 25,
+	"Defense": null,
+	"Health Regen": null
+  },
+  "10012": {
+	"Name": "Burn",
+	"Category": "DoT",
+	"Stackable": false,
+	"Attack": 25,
+	"Defense": null,
+	"Health Regen": null
+  },
+  "10013": {
+	"Name": "Wand",
+	"Category": "Weapon",
+	"Stackable": false,
+	"Attack": 200,
+	"Defense": null,
+	"Health Regen": null
+  },
+  "10014": {
+	"Name": "Shield",
+	"Category": "Armor",
+	"Stackable": false,
+	"Attack": null,
+	"Defense": 30,
+	"Health Regen": null
+  },
+  "10015": {
+	"Name": "Lance",
+	"Category": "Weapon",
+	"Stackable": false,
+	"Attack": 70,
+	"Defense": null,
+	"Health Regen": null
+  }
+}

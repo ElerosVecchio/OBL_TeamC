@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://c3we5ell6wm5v"]
+
+[node name="item generation scene" type="Node2D"]
