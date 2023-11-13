@@ -19,3 +19,7 @@ config/icon="res://icon.svg"
 [audio]
 
 buses/default_bus_layout="res://SoundManagerPrototype/default_bus_layout.tres"
+
+[autoload]
+
+ImportData="*res://ImportData.gd"
