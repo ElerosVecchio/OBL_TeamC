@@ -23,3 +23,4 @@ buses/default_bus_layout="res://SoundManagerPrototype/default_bus_layout.tres"
 [autoload]
 
 ImportData="*res://Item scripts/ImportData.gd"
+Global="*res://TurnBasedSystem&Scene/Global.gd"

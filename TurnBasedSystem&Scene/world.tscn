@@ -1,12 +1,12 @@
 [gd_scene load_steps=27 format=3 uid="uid://cp3kcps83rmeb"]
 
-[ext_resource type="Script" path="res://world.gd" id="1_24vmh"]
-[ext_resource type="PackedScene" uid="uid://bmmai14isviqg" path="res://hero.tscn" id="3_cp336"]
-[ext_resource type="Script" path="res://hero.gd" id="4_ib603"]
-[ext_resource type="PackedScene" uid="uid://catqsg4w04yqc" path="res://bbeg.tscn" id="5_rif6k"]
-[ext_resource type="Texture2D" uid="uid://nam5v3lpqgh1" path="res://cegqlbo71df61.png" id="5_ruwri"]
-[ext_resource type="FontFile" uid="uid://bn23liymug5ut" path="res://Super Mario Bros. NES.ttf" id="6_4o36p"]
-[ext_resource type="Script" path="res://bbeg.gd" id="6_hvp2g"]
+[ext_resource type="Script" path="res://TurnBasedSystem&Scene/world.gd" id="1_24vmh"]
+[ext_resource type="PackedScene" uid="uid://bmmai14isviqg" path="res://TurnBasedSystem&Scene/hero.tscn" id="3_cp336"]
+[ext_resource type="Script" path="res://TurnBasedSystem&Scene/hero.gd" id="4_ib603"]
+[ext_resource type="PackedScene" uid="uid://catqsg4w04yqc" path="res://TurnBasedSystem&Scene/bbeg.tscn" id="5_rif6k"]
+[ext_resource type="Texture2D" uid="uid://dtqj6weh4wbt1" path="res://TurnBasedSystem&Scene/Placeholder Sprites/cegqlbo71df61.png" id="5_ruwri"]
+[ext_resource type="FontFile" uid="uid://dtyyb1av647aj" path="res://TurnBasedSystem&Scene/Placeholder Sprites/Super Mario Bros. NES.ttf" id="6_4o36p"]
+[ext_resource type="Script" path="res://TurnBasedSystem&Scene/bbeg.gd" id="6_hvp2g"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4pygw"]
 bg_color = Color(0, 0, 0, 1)
