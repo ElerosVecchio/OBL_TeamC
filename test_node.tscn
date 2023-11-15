@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://dc7n6a52q65ty"]
+
+[node name="TestNode" type="Node2D"]
