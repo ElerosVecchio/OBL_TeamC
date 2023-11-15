@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdix5s5pq4bo"
-path="res://.godot/imported/cthulu_192x112_SpriteSheet.png-994879eda00855d8279f3bd65abb0f6a.ctex"
+uid="uid://b7ail3h52vt3q"
+path="res://.godot/imported/AnimationSheet_Character.png-d0086903d634a3524036364d45997da9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TurnBasedSystem&Scene/Sprites/cthulu_192x112_SpriteSheet.png"
-dest_files=["res://.godot/imported/cthulu_192x112_SpriteSheet.png-994879eda00855d8279f3bd65abb0f6a.ctex"]
+source_file="res://TurnBasedSystem&Scene/Placeholder Sprites/AnimationSheet_Character.png"
+dest_files=["res://.godot/imported/AnimationSheet_Character.png-d0086903d634a3524036364d45997da9.ctex"]
 
 [params]
 

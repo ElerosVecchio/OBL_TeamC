@@ -1,0 +1,269 @@
+[gd_scene load_steps=27 format=3 uid="uid://cp3kcps83rmeb"]
+
+[ext_resource type="Script" path="res://world.gd" id="1_24vmh"]
+[ext_resource type="PackedScene" uid="uid://bmmai14isviqg" path="res://hero.tscn" id="3_cp336"]
+[ext_resource type="Script" path="res://hero.gd" id="4_ib603"]
+[ext_resource type="PackedScene" uid="uid://catqsg4w04yqc" path="res://bbeg.tscn" id="5_rif6k"]
+[ext_resource type="Texture2D" uid="uid://nam5v3lpqgh1" path="res://cegqlbo71df61.png" id="5_ruwri"]
+[ext_resource type="FontFile" uid="uid://bn23liymug5ut" path="res://Super Mario Bros. NES.ttf" id="6_4o36p"]
+[ext_resource type="Script" path="res://bbeg.gd" id="6_hvp2g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4pygw"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ovg6c"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gdfde"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kmu5l"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tu4kx"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pd5jp"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k0fm3"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ki5dx"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2d2o6"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_njh7f"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nht6k"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vvo5q"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ri28y"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yf2da"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f4qbi"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7hyb5"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0d222"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_us0p4"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_clhsq"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="world" type="Node2D"]
+script = ExtResource("1_24vmh")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -27.0
+offset_top = -5.0
+offset_right = 2573.0
+offset_bottom = 1460.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_ruwri")
+
+[node name="hero" parent="." instance=ExtResource("3_cp336")]
+z_index = 1
+position = Vector2(135, 186)
+script = ExtResource("4_ib603")
+
+[node name="bbeg" parent="." instance=ExtResource("5_rif6k")]
+z_index = 1
+position = Vector2(311, 162)
+script = ExtResource("6_hvp2g")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+z_index = 1
+position = Vector2(237, 143)
+zoom = Vector2(2, 2)
+
+[node name="ActionsPanel" type="Panel" parent="."]
+offset_top = 229.0
+offset_right = 461.0
+offset_bottom = 269.0
+
+[node name="Actions" type="HBoxContainer" parent="ActionsPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Attacks" type="Button" parent="ActionsPanel/Actions"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_4o36p")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_4pygw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ovg6c")
+text = "Attacks"
+
+[node name="Defend" type="Button" parent="ActionsPanel/Actions"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_4o36p")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_gdfde")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kmu5l")
+text = "Defend"
+
+[node name="Surrender" type="Button" parent="ActionsPanel/Actions"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_4o36p")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_tu4kx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pd5jp")
+text = "Surrender"
+
+[node name="End Turn" type="Button" parent="ActionsPanel/Actions"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_4o36p")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_k0fm3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ki5dx")
+text = "End Turn"
+
+[node name="AttacksPanel" type="Panel" parent="."]
+offset_left = -5.0
+offset_top = 220.0
+offset_right = 466.0
+offset_bottom = 283.0
+
+[node name="AttacksBox" type="HBoxContainer" parent="AttacksPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LightningBolt" type="Button" parent="AttacksPanel/AttacksBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_4o36p")
+theme_override_font_sizes/font_size = 7
+theme_override_styles/normal = SubResource("StyleBoxFlat_2d2o6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_njh7f")
+text = "Lightning Bolt"
+
+[node name="Fireball" type="Button" parent="AttacksPanel/AttacksBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_4o36p")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_nht6k")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vvo5q")
+text = "Fireball"
+
+[node name="IcicleCrash" type="Button" parent="AttacksPanel/AttacksBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_4o36p")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_ri28y")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yf2da")
+text = "Icicle Crash"
+
+[node name="ExitAttack" type="Button" parent="AttacksPanel/AttacksBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_4o36p")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_f4qbi")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7hyb5")
+text = "Back"
+
+[node name="EnemyTurnLabel" type="Panel" parent="."]
+visible = false
+offset_top = 227.0
+offset_right = 463.0
+offset_bottom = 271.0
+
+[node name="Label" type="Label" parent="EnemyTurnLabel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_4o36p")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0d222")
+text = "Enemy's Turn!
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NoMoreAP" type="Button" parent="."]
+visible = false
+offset_left = -4.0
+offset_top = 219.0
+offset_right = 465.0
+offset_bottom = 282.0
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_us0p4")
+
+[node name="Label" type="Label" parent="NoMoreAP"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_4o36p")
+theme_override_font_sizes/font_size = 12
+text = "You Don't Have Enough Action Points!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="APPanel" type="Panel" parent="."]
+offset_left = -14.0
+offset_top = 20.0
+offset_right = 26.0
+offset_bottom = 60.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_clhsq")
+
+[node name="Label" type="Label" parent="APPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_4o36p")
+theme_override_font_sizes/font_size = 9
+text = "AP:5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="ActionsPanel/Actions/Attacks" to="." method="_on_attacks_pressed"]
+[connection signal="pressed" from="ActionsPanel/Actions/Surrender" to="." method="_on_surrender_pressed"]
+[connection signal="pressed" from="ActionsPanel/Actions/End Turn" to="." method="_on_end_turn_pressed"]
+[connection signal="pressed" from="AttacksPanel/AttacksBox/LightningBolt" to="." method="_on_lightning_bolt_pressed"]
+[connection signal="pressed" from="AttacksPanel/AttacksBox/Fireball" to="." method="_on_fireball_pressed"]
+[connection signal="pressed" from="AttacksPanel/AttacksBox/IcicleCrash" to="." method="_on_icicle_crash_pressed"]
+[connection signal="pressed" from="AttacksPanel/AttacksBox/ExitAttack" to="." method="_on_exit_attack_pressed"]
+[connection signal="pressed" from="NoMoreAP" to="." method="_on_no_more_ap_pressed"]

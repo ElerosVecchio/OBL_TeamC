@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dtqj6weh4wbt1"
-path="res://.godot/imported/cegqlbo71df61.png-19d752d364736d7d9a8e792ae5c6ccd0.ctex"
+path="res://.godot/imported/cegqlbo71df61.png-f4fb3031c4767a4cfbf7573d1f2be30a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TurnBasedSystem&Scene/Sprites/cegqlbo71df61.png"
-dest_files=["res://.godot/imported/cegqlbo71df61.png-19d752d364736d7d9a8e792ae5c6ccd0.ctex"]
+source_file="res://TurnBasedSystem&Scene/Placeholder Sprites/cegqlbo71df61.png"
+dest_files=["res://.godot/imported/cegqlbo71df61.png-f4fb3031c4767a4cfbf7573d1f2be30a.ctex"]
 
 [params]
 
