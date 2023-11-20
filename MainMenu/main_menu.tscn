@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cd0xyan3slpu3"]
+[gd_scene load_steps=4 format=3 uid="uid://cd0xyan3slpu3"]
 
 [ext_resource type="Script" path="res://MainMenu/main_menu.gd" id="1_j3xqe"]
 [ext_resource type="Texture2D" uid="uid://dpe0ckn6typcr" path="res://icon.svg" id="2_xy1mj"]
 [ext_resource type="Script" path="res://Item scripts/ItemScene.gd" id="3_e3sc7"]
-[ext_resource type="AudioStream" uid="uid://cdmhc07drpl7e" path="res://MainMenu/menu_music.mp3" id="4_8q8q6"]
 
 [node name="MainMenu" type="Node2D"]
 position = Vector2(577, 463)
@@ -71,11 +70,6 @@ metadata/_edit_use_anchors_ = true
 [node name="Item generation scene" type="Node" parent="."]
 script = ExtResource("3_e3sc7")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_8q8q6")
-autoplay = true
-bus = &"Music"
-
-[connection signal="pressed" from="MainMenuCanvas/btn_play" to="." method="_on_btn_play_pressed"]
+[connection signal="pressed" from="MainMenuCanvas/btn_play" to="." method="on_play_button_pressed"]
 [connection signal="pressed" from="MainMenuCanvas/btn_quit" to="." method="on_quit_button_pressed"]
 [connection signal="pressed" from="MainMenuCanvas/btn_options" to="." method="on_options_button_pressed"]

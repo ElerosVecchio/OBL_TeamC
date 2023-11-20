@@ -2,10 +2,10 @@ extends Node
 
 var actionpoints = 5
 
-var sworddamage = 14
+var sworddamage = 15
 var lancedamage = 8
-var hammerdamage = 24
-var wanddamage = 50
+var hammerdamage = 35
+var wanddamage = 65
 var shielddamage = 3
 
 var healthpotions = 2

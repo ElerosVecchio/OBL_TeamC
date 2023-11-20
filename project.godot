@@ -25,6 +25,10 @@ buses/default_bus_layout="res://SoundManager/default_bus_layout.tres"
 ImportData="*res://Item scripts/ImportData.gd"
 Global="*res://TurnBasedSystem&Scene/Global.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

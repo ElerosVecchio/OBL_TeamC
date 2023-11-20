@@ -102,6 +102,7 @@ func update_ap():
 	APPanel.get_node("Label").text = "AP:%d" % [Global.actionpoints]
 
 
+
 func _on_end_turn_pressed():
 	Global.enemyturn = true
 	Global.playerturn = false
