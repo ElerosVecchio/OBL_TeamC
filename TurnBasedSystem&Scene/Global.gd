@@ -2,17 +2,26 @@ extends Node
 
 var actionpoints = 5
 
-var lightningboltdamage = 70
-var fireballdamage = 50
-var iciclecrashdamage = 20
+var sworddamage = 14
+var lancedamage = 8
+var hammerdamage = 24
+var wanddamage = 50
+var shielddamage = 3
 
-var bbegdamage = 20
+var healthpotions = 2
+var damagepotions = 2
+var appotions = 2
+var scrap = 1
+
+var shielding = 1
+
+var bbegdamage = 17
 
 var playermaxhealth = 100
 var playercurrenthealth = 100
 
-var bbegmaxhealth = 500
-var bbegcurrenthealth = 500
+var bbegmaxhealth = 150
+var bbegcurrenthealth = 150
 
 var playerturn = true
 var enemyturn = false
