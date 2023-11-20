@@ -20,19 +20,15 @@ func _ready():
 # Placeholder for music volume change functionality
 func on_music_volume_changed(value):
 	music_volume_label.text = "Music Volume: " + str(int(value))
-	new_music_volume = value*3/10-30 #Value adjusted for technical purposes
-	AudioServer.set_bus_volume_db(music_bus, (value*3/10-30))
-	
+	print(music_volume_label.text)
+	new_music_volume = value*3/10-30 #Value adjusted to range [-30, 0] for technical purposes
 
 
 # Placeholder for sound volume change functionality
 func on_sound_volume_changed(value):
 	sound_volume_label.text = "Sound Volume: " + str(int(value))
-	AudioServer.set_bus_volume_db(sound_effects_bus, (value*3/10-30))
-	if value == 0:
-		AudioServer.set_bus_mute(sound_effects_bus, true)
-	else:
-		AudioServer.set_bus_mute(sound_effects_bus, false)
+	print(sound_volume_label.text)
+	new_sound_volume = value*3/10-30 #Value adjusted to range [-30, 0] for technical purposes
 
 
 # Placeholder for fullscreen toggle functionality
