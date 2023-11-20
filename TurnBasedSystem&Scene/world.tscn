@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cp3kcps83rmeb"]
+[gd_scene load_steps=42 format=3 uid="uid://cp3kcps83rmeb"]
 
 [ext_resource type="Script" path="res://TurnBasedSystem&Scene/world.gd" id="1_24vmh"]
 [ext_resource type="PackedScene" uid="uid://bmmai14isviqg" path="res://TurnBasedSystem&Scene/hero.tscn" id="3_cp336"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://dtqj6weh4wbt1" path="res://TurnBasedSystem&Scene/Placeholder Sprites/cegqlbo71df61.png" id="5_ruwri"]
 [ext_resource type="FontFile" uid="uid://dtyyb1av647aj" path="res://TurnBasedSystem&Scene/Placeholder Sprites/Super Mario Bros. NES.ttf" id="6_4o36p"]
 [ext_resource type="Script" path="res://TurnBasedSystem&Scene/bbeg.gd" id="6_hvp2g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5hkgt"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4pygw"]
 bg_color = Color(0, 0, 0, 1)
@@ -50,6 +53,12 @@ bg_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yf2da"]
 bg_color = Color(1, 1, 1, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4d8nk"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wuaut"]
+bg_color = Color(1, 1, 1, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cd7hk"]
 bg_color = Color(0, 0, 0, 1)
 
@@ -60,6 +69,36 @@ bg_color = Color(1, 1, 1, 1)
 bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7hyb5"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2rf1j"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fhoc4"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4yiko"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_twuao"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xfsuk"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_acyck"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tp8k5"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dciod"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c73rd"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cnlr8"]
 bg_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0d222"]
@@ -89,7 +128,7 @@ script = ExtResource("4_ib603")
 
 [node name="bbeg" parent="." instance=ExtResource("5_rif6k")]
 z_index = 1
-position = Vector2(311, 162)
+position = Vector2(324, 157)
 script = ExtResource("6_hvp2g")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -102,6 +141,7 @@ visible = false
 offset_top = 229.0
 offset_right = 461.0
 offset_bottom = 269.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5hkgt")
 
 [node name="Actions" type="HBoxContainer" parent="ActionsPanel"]
 layout_mode = 1
@@ -116,7 +156,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_4o36p")
-theme_override_font_sizes/font_size = 13
+theme_override_font_sizes/font_size = 11
 theme_override_styles/normal = SubResource("StyleBoxFlat_4pygw")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ovg6c")
 text = "Weapons"
@@ -126,7 +166,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_4o36p")
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 11
 theme_override_styles/normal = SubResource("StyleBoxFlat_gdfde")
 theme_override_styles/hover = SubResource("StyleBoxFlat_kmu5l")
 text = "Items"
@@ -136,21 +176,23 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_4o36p")
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 11
 theme_override_styles/normal = SubResource("StyleBoxFlat_tu4kx")
 theme_override_styles/hover = SubResource("StyleBoxFlat_pd5jp")
 text = "Surrender"
 
 [node name="End Turn" type="Button" parent="ActionsPanel/Actions"]
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_4o36p")
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 11
 theme_override_styles/normal = SubResource("StyleBoxFlat_k0fm3")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ki5dx")
 text = "End Turn"
 
 [node name="AttacksPanel" type="Panel" parent="."]
+visible = false
 offset_left = -5.0
 offset_top = 220.0
 offset_right = 466.0
@@ -173,7 +215,9 @@ theme_override_font_sizes/font_size = 7
 theme_override_styles/normal = SubResource("StyleBoxFlat_2d2o6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_njh7f")
 text = "Sword	
-2 AP"
+14 DMG
+2 AP
+"
 
 [node name="Lance" type="Button" parent="AttacksPanel/AttacksBox"]
 layout_mode = 2
@@ -184,6 +228,7 @@ theme_override_font_sizes/font_size = 8
 theme_override_styles/normal = SubResource("StyleBoxFlat_nht6k")
 theme_override_styles/hover = SubResource("StyleBoxFlat_vvo5q")
 text = "Lance
+8 DMG
 1 AP"
 
 [node name="Hammer" type="Button" parent="AttacksPanel/AttacksBox"]
@@ -195,7 +240,20 @@ theme_override_font_sizes/font_size = 8
 theme_override_styles/normal = SubResource("StyleBoxFlat_ri28y")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yf2da")
 text = "Hammer
+24 DMG
 4 AP"
+
+[node name="Wand" type="Button" parent="AttacksPanel/AttacksBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_4o36p")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_4d8nk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wuaut")
+text = "Wand
+50 DMG
+7 AP"
 
 [node name="Shield" type="Button" parent="AttacksPanel/AttacksBox"]
 layout_mode = 2
@@ -206,6 +264,7 @@ theme_override_font_sizes/font_size = 8
 theme_override_styles/normal = SubResource("StyleBoxFlat_cd7hk")
 theme_override_styles/hover = SubResource("StyleBoxFlat_c7enl")
 text = "Shield
+2X DEF
 1 AP"
 
 [node name="ExitAttack" type="Button" parent="AttacksPanel/AttacksBox"]
@@ -216,6 +275,70 @@ theme_override_fonts/font = ExtResource("6_4o36p")
 theme_override_font_sizes/font_size = 8
 theme_override_styles/normal = SubResource("StyleBoxFlat_f4qbi")
 theme_override_styles/hover = SubResource("StyleBoxFlat_7hyb5")
+text = "Back"
+
+[node name="ItemsPanel" type="Panel" parent="."]
+offset_left = -5.0
+offset_top = 221.0
+offset_right = 465.0
+offset_bottom = 282.0
+
+[node name="Inventory" type="HBoxContainer" parent="ItemsPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HealthPotion" type="Button" parent="ItemsPanel/Inventory"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_4o36p")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_2rf1j")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fhoc4")
+text = "HP Potion"
+
+[node name="DamagePotion" type="Button" parent="ItemsPanel/Inventory"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_4o36p")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_4yiko")
+theme_override_styles/hover = SubResource("StyleBoxFlat_twuao")
+text = "DMG Potion"
+
+[node name="APPotion" type="Button" parent="ItemsPanel/Inventory"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_4o36p")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_xfsuk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_acyck")
+text = "AP Potion"
+
+[node name="Scrap" type="Button" parent="ItemsPanel/Inventory"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_4o36p")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_tp8k5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dciod")
+text = "Scrap"
+
+[node name="ExitItems" type="Button" parent="ItemsPanel/Inventory"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_4o36p")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_c73rd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cnlr8")
 text = "Back"
 
 [node name="EnemyTurnLabel" type="Panel" parent="."]
@@ -239,7 +362,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="NoMoreAP" type="Button" parent="."]
-visible = false
 offset_left = -4.0
 offset_top = 219.0
 offset_right = 465.0
@@ -256,7 +378,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("6_4o36p")
 theme_override_font_sizes/font_size = 12
-text = "You Don't Have Enough Action Points!"
+text = "Not enough resources!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -281,11 +403,16 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="pressed" from="ActionsPanel/Actions/Attacks" to="." method="_on_attacks_pressed"]
+[connection signal="pressed" from="ActionsPanel/Actions/Defend" to="." method="_on_defend_pressed"]
 [connection signal="pressed" from="ActionsPanel/Actions/Surrender" to="." method="_on_surrender_pressed"]
 [connection signal="pressed" from="ActionsPanel/Actions/End Turn" to="." method="_on_end_turn_pressed"]
 [connection signal="pressed" from="AttacksPanel/AttacksBox/Sword" to="." method="_on_lightning_bolt_pressed"]
 [connection signal="pressed" from="AttacksPanel/AttacksBox/Lance" to="." method="_on_fireball_pressed"]
 [connection signal="pressed" from="AttacksPanel/AttacksBox/Hammer" to="." method="_on_icicle_crash_pressed"]
+[connection signal="pressed" from="AttacksPanel/AttacksBox/Wand" to="." method="_on_wand_pressed"]
 [connection signal="pressed" from="AttacksPanel/AttacksBox/Shield" to="." method="_on_shield_pressed"]
 [connection signal="pressed" from="AttacksPanel/AttacksBox/ExitAttack" to="." method="_on_exit_attack_pressed"]
+[connection signal="pressed" from="ItemsPanel/Inventory/HealthPotion" to="." method="_on_health_potion_pressed"]
+[connection signal="pressed" from="ItemsPanel/Inventory/APPotion" to="." method="_on_ap_potion_pressed"]
+[connection signal="pressed" from="ItemsPanel/Inventory/ExitItems" to="." method="_on_exit_items_pressed"]
 [connection signal="pressed" from="NoMoreAP" to="." method="_on_no_more_ap_pressed"]
