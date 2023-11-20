@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cp3kcps83rmeb"]
+[gd_scene load_steps=29 format=3 uid="uid://cp3kcps83rmeb"]
 
 [ext_resource type="Script" path="res://TurnBasedSystem&Scene/world.gd" id="1_24vmh"]
 [ext_resource type="PackedScene" uid="uid://bmmai14isviqg" path="res://TurnBasedSystem&Scene/hero.tscn" id="3_cp336"]
@@ -50,6 +50,12 @@ bg_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yf2da"]
 bg_color = Color(1, 1, 1, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cd7hk"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c7enl"]
+bg_color = Color(1, 1, 1, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f4qbi"]
 bg_color = Color(0, 0, 0, 1)
 
@@ -92,6 +98,7 @@ position = Vector2(237, 143)
 zoom = Vector2(2, 2)
 
 [node name="ActionsPanel" type="Panel" parent="."]
+visible = false
 offset_top = 229.0
 offset_right = 461.0
 offset_bottom = 269.0
@@ -112,7 +119,7 @@ theme_override_fonts/font = ExtResource("6_4o36p")
 theme_override_font_sizes/font_size = 13
 theme_override_styles/normal = SubResource("StyleBoxFlat_4pygw")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ovg6c")
-text = "Attacks"
+text = "Weapons"
 
 [node name="Defend" type="Button" parent="ActionsPanel/Actions"]
 layout_mode = 2
@@ -122,7 +129,7 @@ theme_override_fonts/font = ExtResource("6_4o36p")
 theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxFlat_gdfde")
 theme_override_styles/hover = SubResource("StyleBoxFlat_kmu5l")
-text = "Defend"
+text = "Items"
 
 [node name="Surrender" type="Button" parent="ActionsPanel/Actions"]
 layout_mode = 2
@@ -157,7 +164,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="LightningBolt" type="Button" parent="AttacksPanel/AttacksBox"]
+[node name="Sword" type="Button" parent="AttacksPanel/AttacksBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -165,9 +172,10 @@ theme_override_fonts/font = ExtResource("6_4o36p")
 theme_override_font_sizes/font_size = 7
 theme_override_styles/normal = SubResource("StyleBoxFlat_2d2o6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_njh7f")
-text = "Lightning Bolt"
+text = "Sword	
+2 AP"
 
-[node name="Fireball" type="Button" parent="AttacksPanel/AttacksBox"]
+[node name="Lance" type="Button" parent="AttacksPanel/AttacksBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -175,9 +183,10 @@ theme_override_fonts/font = ExtResource("6_4o36p")
 theme_override_font_sizes/font_size = 8
 theme_override_styles/normal = SubResource("StyleBoxFlat_nht6k")
 theme_override_styles/hover = SubResource("StyleBoxFlat_vvo5q")
-text = "Fireball"
+text = "Lance
+1 AP"
 
-[node name="IcicleCrash" type="Button" parent="AttacksPanel/AttacksBox"]
+[node name="Hammer" type="Button" parent="AttacksPanel/AttacksBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -185,7 +194,19 @@ theme_override_fonts/font = ExtResource("6_4o36p")
 theme_override_font_sizes/font_size = 8
 theme_override_styles/normal = SubResource("StyleBoxFlat_ri28y")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yf2da")
-text = "Icicle Crash"
+text = "Hammer
+4 AP"
+
+[node name="Shield" type="Button" parent="AttacksPanel/AttacksBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_4o36p")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_cd7hk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_c7enl")
+text = "Shield
+1 AP"
 
 [node name="ExitAttack" type="Button" parent="AttacksPanel/AttacksBox"]
 layout_mode = 2
@@ -262,8 +283,9 @@ vertical_alignment = 1
 [connection signal="pressed" from="ActionsPanel/Actions/Attacks" to="." method="_on_attacks_pressed"]
 [connection signal="pressed" from="ActionsPanel/Actions/Surrender" to="." method="_on_surrender_pressed"]
 [connection signal="pressed" from="ActionsPanel/Actions/End Turn" to="." method="_on_end_turn_pressed"]
-[connection signal="pressed" from="AttacksPanel/AttacksBox/LightningBolt" to="." method="_on_lightning_bolt_pressed"]
-[connection signal="pressed" from="AttacksPanel/AttacksBox/Fireball" to="." method="_on_fireball_pressed"]
-[connection signal="pressed" from="AttacksPanel/AttacksBox/IcicleCrash" to="." method="_on_icicle_crash_pressed"]
+[connection signal="pressed" from="AttacksPanel/AttacksBox/Sword" to="." method="_on_lightning_bolt_pressed"]
+[connection signal="pressed" from="AttacksPanel/AttacksBox/Lance" to="." method="_on_fireball_pressed"]
+[connection signal="pressed" from="AttacksPanel/AttacksBox/Hammer" to="." method="_on_icicle_crash_pressed"]
+[connection signal="pressed" from="AttacksPanel/AttacksBox/Shield" to="." method="_on_shield_pressed"]
 [connection signal="pressed" from="AttacksPanel/AttacksBox/ExitAttack" to="." method="_on_exit_attack_pressed"]
 [connection signal="pressed" from="NoMoreAP" to="." method="_on_no_more_ap_pressed"]

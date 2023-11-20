@@ -25,29 +25,38 @@ func _on_exit_attack_pressed():
 	$AttacksPanel.hide()
 	$ActionsPanel.show()
 
-func _on_lightning_bolt_pressed():
-	if Global.actionpoints >= 3:
-		Global.playerattacking = true
-		Global.bbegcurrenthealth -= Global.lightningboltdamage
-		Global.actionpoints -= 3
-	elif Global.actionpoints < 3:
-		$NoMoreAP.show()
-		
-
-func _on_fireball_pressed():
+func _on_lightning_bolt_pressed(): #sword
 	if Global.actionpoints >= 2:
 		Global.playerattacking = true
-		Global.bbegcurrenthealth -= Global.fireballdamage
+		Global.bbegcurrenthealth -= Global.lightningboltdamage
 		Global.actionpoints -= 2
 	elif Global.actionpoints < 2:
 		$NoMoreAP.show()
 		
-func _on_icicle_crash_pressed():
+
+func _on_fireball_pressed(): #lance
 	if Global.actionpoints >= 1:
 		Global.playerattacking = true
-		Global.bbegcurrenthealth -= Global.iciclecrashdamage
+		Global.bbegcurrenthealth -= Global.fireballdamage
 		Global.actionpoints -= 1
-	elif Global.actionpoints < 2:
+	elif Global.actionpoints < 1:
+		$NoMoreAP.show()
+		
+func _on_icicle_crash_pressed(): #hammer
+	if Global.actionpoints >= 4:
+		Global.playerattacking = true
+		Global.bbegcurrenthealth -= Global.iciclecrashdamage
+		Global.actionpoints -= 4
+	elif Global.actionpoints < 4:
+		$NoMoreAP.show()
+
+func _on_shield_pressed():
+	if Global.actionpoints >= 1:
+		Global.playerattacking = true
+		Global.bbegcurrenthealth -= Global.shielddamage
+		Global.shielding = 0.5
+		Global.actionpoints -= 1
+	elif Global.actionpoints < 1:
 		$NoMoreAP.show()
 	
 
@@ -71,10 +80,10 @@ func _on_end_turn_pressed():
 	$AttacksPanel.hide()
 	$EnemyTurnLabel.show()
 	await get_tree().create_timer(2).timeout
-	Global.playercurrenthealth -= Global.bbegdamage
+	Global.playercurrenthealth -= Global.bbegdamage * Global.shielding
 	$EnemyTurnLabel.hide()
-	Global.actionpoints = 5
-	print(Global.actionpoints)
+	Global.shielding = 0.5
+	Global.actionpoints += 1
 
 func defeat():
 	if Global.playerdefeated == true:
@@ -94,4 +103,7 @@ func victory():
 	
 	
 		
+
+
+
 
