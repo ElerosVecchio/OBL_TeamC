@@ -1,78 +1,57 @@
-[gd_scene load_steps=26 format=3 uid="uid://bmmai14isviqg"]
-
-[ext_resource type="Texture2D" uid="uid://ddve2a45mbfw5" path="res://AnimationSheet_Character.png" id="1_mj00x"]
-[ext_resource type="FontFile" uid="uid://bn23liymug5ut" path="res://Super Mario Bros. NES.ttf" id="2_0ucie"]
+[gd_scene load_steps=24 format=3 uid="uid://bmmai14isviqg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ts2vl"]
-atlas = ExtResource("1_mj00x")
 region = Rect2(0, 256, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0b8jw"]
-atlas = ExtResource("1_mj00x")
 region = Rect2(32, 256, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kliiu"]
-atlas = ExtResource("1_mj00x")
 region = Rect2(64, 256, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wdmbt"]
-atlas = ExtResource("1_mj00x")
 region = Rect2(96, 256, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tch6n"]
-atlas = ExtResource("1_mj00x")
 region = Rect2(128, 256, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2hahs"]
-atlas = ExtResource("1_mj00x")
 region = Rect2(160, 256, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ejxq0"]
-atlas = ExtResource("1_mj00x")
 region = Rect2(192, 256, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jnnht"]
-atlas = ExtResource("1_mj00x")
 region = Rect2(224, 256, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3oqx3"]
-atlas = ExtResource("1_mj00x")
 region = Rect2(0, 224, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eudra"]
-atlas = ExtResource("1_mj00x")
 region = Rect2(32, 224, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b2ok0"]
-atlas = ExtResource("1_mj00x")
 region = Rect2(64, 224, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dv7wp"]
-atlas = ExtResource("1_mj00x")
 region = Rect2(96, 224, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q3j1i"]
-atlas = ExtResource("1_mj00x")
 region = Rect2(128, 224, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_apmti"]
-atlas = ExtResource("1_mj00x")
 region = Rect2(160, 224, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gmaw4"]
-atlas = ExtResource("1_mj00x")
 region = Rect2(192, 224, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wlgs5"]
-atlas = ExtResource("1_mj00x")
 region = Rect2(224, 224, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m5tp0"]
-atlas = ExtResource("1_mj00x")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rqldq"]
-atlas = ExtResource("1_mj00x")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_l77hm"]
@@ -202,7 +181,6 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_0ucie")
 text = "HP: 100/100"
 horizontal_alignment = 1
 vertical_alignment = 1

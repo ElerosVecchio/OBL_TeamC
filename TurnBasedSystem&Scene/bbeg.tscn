@@ -1,7 +1,6 @@
-[gd_scene load_steps=45 format=3 uid="uid://catqsg4w04yqc"]
+[gd_scene load_steps=44 format=3 uid="uid://catqsg4w04yqc"]
 
-[ext_resource type="Texture2D" uid="uid://cdix5s5pq4bo" path="res://Sprites/cthulu_192x112_SpriteSheet.png" id="1_h6hrm"]
-[ext_resource type="FontFile" uid="uid://bn23liymug5ut" path="res://Super Mario Bros. NES.ttf" id="2_qdewd"]
+[ext_resource type="Texture2D" uid="uid://cdix5s5pq4bo" path="res://TurnBasedSystem&Scene/Placeholder Sprites/cthulu_192x112_SpriteSheet.png" id="1_h6hrm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c4x0y"]
 atlas = ExtResource("1_h6hrm")
@@ -343,7 +342,6 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_qdewd")
 text = "HP: 300/300"
 horizontal_alignment = 1
 vertical_alignment = 1
