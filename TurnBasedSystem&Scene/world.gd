@@ -118,7 +118,7 @@ func _on_end_turn_pressed():
 			print('Enemy critical hit!')
 		else:
 			Global.playercurrenthealth -= Global.bbegdamage * Global.shielding
-	elif crit <= 25:
+	elif crit <= 20:
 		Global.playercurrenthealth -= Global.bbegdamage * 2 * Global.shielding
 		print('Enemy critical hit!')
 	else:
