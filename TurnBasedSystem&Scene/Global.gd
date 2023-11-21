@@ -9,8 +9,8 @@ var wanddamage = 65
 var shielddamage = 3
 
 var healthpotions = 2
-var damagepotions = 2
-var appotions = 2
+var damagepotions = 1
+var appotions = 1
 var scrap = 1
 
 var shielding = 1
@@ -20,8 +20,8 @@ var bbegdamage = 17
 var playermaxhealth = 100
 var playercurrenthealth = 100
 
-var bbegmaxhealth = 150
-var bbegcurrenthealth = 150
+var bbegmaxhealth = 200
+var bbegcurrenthealth = 200
 
 var playerturn = true
 var enemyturn = false

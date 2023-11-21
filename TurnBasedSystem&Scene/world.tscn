@@ -414,6 +414,7 @@ vertical_alignment = 1
 [connection signal="pressed" from="AttacksPanel/AttacksBox/Shield" to="." method="_on_shield_pressed"]
 [connection signal="pressed" from="AttacksPanel/AttacksBox/ExitAttack" to="." method="_on_exit_attack_pressed"]
 [connection signal="pressed" from="ItemsPanel/Inventory/HealthPotion" to="." method="_on_health_potion_pressed"]
+[connection signal="pressed" from="ItemsPanel/Inventory/DamagePotion" to="." method="_on_damage_potion_pressed"]
 [connection signal="pressed" from="ItemsPanel/Inventory/APPotion" to="." method="_on_ap_potion_pressed"]
 [connection signal="pressed" from="ItemsPanel/Inventory/ExitItems" to="." method="_on_exit_items_pressed"]
 [connection signal="pressed" from="NoMoreAP" to="." method="_on_no_more_ap_pressed"]

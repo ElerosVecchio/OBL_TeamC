@@ -1,6 +1,7 @@
 extends Node2D
 
 var crit = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Global.playerturn = true
@@ -154,3 +155,18 @@ func _on_ap_potion_pressed():
 	else:
 		Global.appotions -= 1
 		Global.actionpoints += 2
+
+
+
+func _on_damage_potion_pressed():
+	if Global.damagepotions == 0:
+		$NoMoreAP.show()
+	else:
+		Global.damagepotions -= 1
+		Global.sworddamage += 5
+		Global.lancedamage += 5
+		Global.hammerdamage += 5
+		Global.wanddamage += 5
+		Global.shielddamage += 5
+
+
