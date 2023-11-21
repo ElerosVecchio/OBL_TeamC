@@ -214,7 +214,7 @@ theme_override_font_sizes/font_size = 7
 theme_override_styles/normal = SubResource("StyleBoxFlat_2d2o6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_njh7f")
 text = "Sword	
-15 DMG
+150 DMG
 2 AP
 "
 
@@ -227,7 +227,7 @@ theme_override_font_sizes/font_size = 8
 theme_override_styles/normal = SubResource("StyleBoxFlat_nht6k")
 theme_override_styles/hover = SubResource("StyleBoxFlat_vvo5q")
 text = "Lance
-7 DMG
+70 DMG
 1 AP"
 
 [node name="Hammer" type="Button" parent="AttacksPanel/AttacksBox"]
@@ -239,7 +239,7 @@ theme_override_font_sizes/font_size = 8
 theme_override_styles/normal = SubResource("StyleBoxFlat_ri28y")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yf2da")
 text = "Hammer
-35 DMG
+350 DMG
 4 AP"
 
 [node name="Wand" type="Button" parent="AttacksPanel/AttacksBox"]
@@ -251,7 +251,7 @@ theme_override_font_sizes/font_size = 8
 theme_override_styles/normal = SubResource("StyleBoxFlat_4d8nk")
 theme_override_styles/hover = SubResource("StyleBoxFlat_wuaut")
 text = "Wand
-65 DMG
+650 DMG
 7 AP"
 
 [node name="Shield" type="Button" parent="AttacksPanel/AttacksBox"]

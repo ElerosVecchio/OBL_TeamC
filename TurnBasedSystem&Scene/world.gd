@@ -36,7 +36,7 @@ func _on_lightning_bolt_pressed(): #sword
 	if Global.actionpoints >= 2:
 		Global.playerattacking = true
 		crit = randi() % 100
-		if crit <= 35:
+		if crit <= 50:
 			Global.bbegcurrenthealth -= (Global.sworddamage * 1.5)
 			print('Critical Hit!')
 		else:
@@ -50,7 +50,7 @@ func _on_fireball_pressed(): #lance
 	if Global.actionpoints >= 1:
 		Global.playerattacking = true
 		crit = randi() % 100
-		if crit <= 50:
+		if crit <= 20:
 			Global.bbegcurrenthealth -= (Global.lancedamage * 1.5)
 			print('Critical Hit!')
 		else:
@@ -63,7 +63,7 @@ func _on_icicle_crash_pressed(): #hammer
 	if Global.actionpoints >= 4:
 		Global.playerattacking = true
 		crit = randi() % 100
-		if crit <= 20:
+		if crit <= 65:
 			Global.bbegcurrenthealth -= (Global.hammerdamage * 1.5)
 			print('Critical Hit!')
 		else:
@@ -112,8 +112,14 @@ func _on_end_turn_pressed():
 	$EnemyTurnLabel.show()
 	await get_tree().create_timer(2).timeout
 	crit = randi() % 100
-	if crit <= 30:
-		Global.playercurrenthealth -= Global.bbegdamage * 2
+	if Global.bbegcurrenthealth >= Global.bbegmaxhealth * 0.6: #the boss is more likely to crit if it has higher health
+		if crit <= 45:
+			Global.playercurrenthealth -= Global.bbegdamage * 2 * Global.shielding
+			print('Enemy critical hit!')
+		else:
+			Global.playercurrenthealth -= Global.bbegdamage * Global.shielding
+	elif crit <= 25:
+		Global.playercurrenthealth -= Global.bbegdamage * 2 * Global.shielding
 		print('Enemy critical hit!')
 	else:
 		Global.playercurrenthealth -= Global.bbegdamage * Global.shielding
@@ -146,7 +152,7 @@ func _on_health_potion_pressed():
 		if Global.playercurrenthealth >= Global.playermaxhealth * 0.7: #checks if player current health is above 70%
 			Global.playercurrenthealth = Global.playermaxhealth
 		else:
-			Global.playercurrenthealth += Global.playermaxhealth * 0.3
+			Global.playercurrenthealth += Global.playermaxhealth * 0.4
 
 
 func _on_ap_potion_pressed():
@@ -163,10 +169,10 @@ func _on_damage_potion_pressed():
 		$NoMoreAP.show()
 	else:
 		Global.damagepotions -= 1
-		Global.sworddamage += 5
-		Global.lancedamage += 5
-		Global.hammerdamage += 5
-		Global.wanddamage += 5
-		Global.shielddamage += 5
+		Global.sworddamage += 50
+		Global.lancedamage += 50
+		Global.hammerdamage += 50
+		Global.wanddamage += 50
+		Global.shielddamage += 50
 
 
