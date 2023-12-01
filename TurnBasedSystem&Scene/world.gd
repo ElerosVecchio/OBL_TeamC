@@ -163,35 +163,56 @@ func _on_end_turn_pressed():
 	await get_tree().create_timer(2).timeout
 	crit = randi() % 100
 	spec_effect = randi() % 100
-	if Global.bbegcurrenthealth <= Global.bbegmaxhealth * 0.5: #the boss is more likely to crit if it has lower health
+	if Global.bbegcurrenthealth <= Global.bbegmaxhealth * 0.4: #the boss is more likely to crit if it has lower health
 		if crit <= 45:
 			Global.playercurrenthealth -= Global.bbegdamage * 2 * Global.shielding
 			print('Enemy critical hit')
 		else:
 			Global.playercurrenthealth -= Global.bbegdamage * Global.shielding
-		if spec_effect < 50:
+		if spec_effect > 66:
 			can_potion = false
 			debuff.text = "The boss has blocked your potions!"
 			debuff_applied = true
-		elif spec_effect > 50:
+		elif spec_effect < 33:
 			if Global.actionpoints >= 3:
 				Global.actionpoints -= 3
-			else:
-				Global.actionpoints = 0
+			elif Global.actionpoints == 0:
+				Global.actionpoints -= 2
 			debuff.text = "The boss has sapped your energy!"
 			debuff_applied = true
 		if Global.bbegcurrenthealth <= Global.bbegmaxhealth * 0.3:
 			Global.bbegcurrenthealth += Global.bbegmaxhealth * 0.025
-	elif crit <= 20:
-		Global.playercurrenthealth -= Global.bbegdamage * 2 * Global.shielding
-		print('Enemy critical hit!')
 	else:
-		Global.playercurrenthealth -= Global.bbegdamage * Global.shielding
+		if crit <= 20:
+			Global.playercurrenthealth -= Global.bbegdamage * 2 * Global.shielding
+			print('Enemy critical hit!')
+		else:# no critical hit and boss is too healthy to enter second stage
+			Global.playercurrenthealth -= Global.bbegdamage * Global.shielding
+		if spec_effect >= 80:
+			can_potion = false
+			debuff.text = "The boss has blocked your potions!"
+			debuff_applied = true
+		elif spec_effect <= 20:
+			if Global.actionpoints >= 3:
+				Global.actionpoints -= 3
+			elif Global.actionpoints == 0:
+				Global.actionpoints = 0
+			debuff.text = "The boss has sapped your energy!"
+			debuff_applied = true
+		else:
+			pass
 	$EnemyTurnLabel.hide()
 	if debuff_applied == true:
 		$Debuff.show()
 	Global.shielding = 1
 	Global.actionpoints += 2
+	if damage_potion_consumed == true:
+		Global.sworddamage -= 50
+		Global.lancedamage -= 50
+		Global.hammerdamage -= 50
+		Global.wanddamage -= 50
+		Global.shielddamage -= 50
+	damage_potion_consumed = false
 
 func defeat():
 	if Global.playerdefeated == true:
@@ -232,7 +253,7 @@ func _on_ap_potion_pressed():
 		Global.appotions -= 1
 		Global.actionpoints += 2
 
-
+var damage_potion_consumed = false
 
 func _on_damage_potion_pressed():
 	if Global.damagepotions == 0:
@@ -240,6 +261,7 @@ func _on_damage_potion_pressed():
 	if can_potion == false:
 		$Debuff.show()
 	else:
+		damage_potion_consumed = true
 		Global.damagepotions -= 1
 		Global.sworddamage += 50
 		Global.lancedamage += 50

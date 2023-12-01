@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://cp3kcps83rmeb"]
+[gd_scene load_steps=47 format=3 uid="uid://cp3kcps83rmeb"]
 
 [ext_resource type="Script" path="res://TurnBasedSystem&Scene/world.gd" id="1_24vmh"]
 [ext_resource type="PackedScene" uid="uid://bmmai14isviqg" path="res://TurnBasedSystem&Scene/hero.tscn" id="3_cp336"]
@@ -121,6 +121,9 @@ bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7nead"]
 bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p3mqt"]
+bg_color = Color(1, 1, 1, 1)
 
 [node name="world" type="Node2D"]
 script = ExtResource("1_24vmh")
@@ -391,7 +394,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("6_4o36p")
-theme_override_font_sizes/font_size = 9
+theme_override_font_sizes/font_size = 7
 text = "AP:5"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -451,9 +454,11 @@ offset_left = -5.0
 offset_top = 220.0
 offset_right = 465.0
 offset_bottom = 282.0
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_4o36p")
 theme_override_font_sizes/font_size = 13
 theme_override_styles/normal = SubResource("StyleBoxFlat_7nead")
+theme_override_styles/hover = SubResource("StyleBoxFlat_p3mqt")
 text = "The Boss has debuffed YOU!"
 
 [connection signal="pressed" from="ActionsPanel/Actions/Attacks" to="." method="_on_attacks_pressed"]
