@@ -9,6 +9,7 @@ func _ready():
 	$ItemsPanel.hide()
 	$NoMoreAP.hide()
 	$EnemyTurnLabel.hide()
+	$SurrenderPanel.hide()
 	print(Global.actionpoints)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -95,8 +96,8 @@ func _on_no_more_ap_pressed():
 
 
 func _on_surrender_pressed():
-	#surrender scene
-	get_tree().quit()
+	$SurrenderPanel.show()
+	
 
 func update_ap():
 	var APPanel = $APPanel
@@ -125,7 +126,7 @@ func _on_end_turn_pressed():
 		Global.playercurrenthealth -= Global.bbegdamage * Global.shielding
 	$EnemyTurnLabel.hide()
 	Global.shielding = 1
-	Global.actionpoints += 1
+	Global.actionpoints += 2
 
 func defeat():
 	if Global.playerdefeated == true:
@@ -176,3 +177,8 @@ func _on_damage_potion_pressed():
 		Global.shielddamage += 50
 
 
+func _on_yes_surrender_pressed():
+	Global.Surrendering = true
+
+func _on_no_surrender_pressed():
+	$SurrenderPanel.hide()

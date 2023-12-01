@@ -29,7 +29,7 @@ func attacking():
 		pass
 
 func defeat():
-	if Global.playercurrenthealth <= 0:
+	if Global.playercurrenthealth <= 0 or Global.Surrendering == true:
 		Global.playerdefeated = true
 		$healthbar.hide()
 		not_idle = true

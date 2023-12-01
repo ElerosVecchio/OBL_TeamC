@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://cp3kcps83rmeb"]
+[gd_scene load_steps=45 format=3 uid="uid://cp3kcps83rmeb"]
 
 [ext_resource type="Script" path="res://TurnBasedSystem&Scene/world.gd" id="1_24vmh"]
 [ext_resource type="PackedScene" uid="uid://bmmai14isviqg" path="res://TurnBasedSystem&Scene/hero.tscn" id="3_cp336"]
@@ -89,12 +89,6 @@ bg_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_acyck"]
 bg_color = Color(1, 1, 1, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tp8k5"]
-bg_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dciod"]
-bg_color = Color(1, 1, 1, 1)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c73rd"]
 bg_color = Color(0, 0, 0, 1)
 
@@ -110,6 +104,21 @@ bg_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_clhsq"]
 bg_color = Color(0, 0, 0, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_trrqh"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t1yo6"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_35wvw"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j2efc"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ly66m"]
+bg_color = Color(0, 0, 0, 1)
+
 [node name="world" type="Node2D"]
 script = ExtResource("1_24vmh")
 
@@ -123,7 +132,7 @@ texture = ExtResource("5_ruwri")
 
 [node name="hero" parent="." instance=ExtResource("3_cp336")]
 z_index = 1
-position = Vector2(135, 186)
+position = Vector2(133, 179)
 script = ExtResource("4_ib603")
 
 [node name="bbeg" parent="." instance=ExtResource("5_rif6k")]
@@ -137,7 +146,6 @@ position = Vector2(233, 142)
 zoom = Vector2(2.2, 2.2)
 
 [node name="ActionsPanel" type="Panel" parent="."]
-visible = false
 offset_top = 229.0
 offset_right = 461.0
 offset_bottom = 269.0
@@ -192,6 +200,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_ki5dx")
 text = "End Turn"
 
 [node name="AttacksPanel" type="Panel" parent="."]
+visible = false
 offset_left = -5.0
 offset_top = 220.0
 offset_right = 466.0
@@ -210,12 +219,10 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_4o36p")
-theme_override_font_sizes/font_size = 5
+theme_override_font_sizes/font_size = 11
 theme_override_styles/normal = SubResource("StyleBoxFlat_2d2o6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_njh7f")
 text = "Sword	
-150 Base DMG
-2 AP
 "
 
 [node name="Lance" type="Button" parent="AttacksPanel/AttacksBox"]
@@ -223,48 +230,41 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_4o36p")
-theme_override_font_sizes/font_size = 5
+theme_override_font_sizes/font_size = 11
 theme_override_styles/normal = SubResource("StyleBoxFlat_nht6k")
 theme_override_styles/hover = SubResource("StyleBoxFlat_vvo5q")
 text = "Lance
-70 base DMG
-1 AP"
+"
 
 [node name="Hammer" type="Button" parent="AttacksPanel/AttacksBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_4o36p")
-theme_override_font_sizes/font_size = 5
+theme_override_font_sizes/font_size = 11
 theme_override_styles/normal = SubResource("StyleBoxFlat_ri28y")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yf2da")
-text = "Hammer
-350 Base DMG
-4 AP"
+text = "Hammer"
 
 [node name="Wand" type="Button" parent="AttacksPanel/AttacksBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_4o36p")
-theme_override_font_sizes/font_size = 5
+theme_override_font_sizes/font_size = 11
 theme_override_styles/normal = SubResource("StyleBoxFlat_4d8nk")
 theme_override_styles/hover = SubResource("StyleBoxFlat_wuaut")
-text = "Wand
-650 Base DMG
-7 AP"
+text = "Wand"
 
 [node name="Shield" type="Button" parent="AttacksPanel/AttacksBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_4o36p")
-theme_override_font_sizes/font_size = 5
+theme_override_font_sizes/font_size = 11
 theme_override_styles/normal = SubResource("StyleBoxFlat_cd7hk")
 theme_override_styles/hover = SubResource("StyleBoxFlat_c7enl")
-text = "Shield
-2X DEF
-1 AP"
+text = "Shield"
 
 [node name="ExitAttack" type="Button" parent="AttacksPanel/AttacksBox"]
 layout_mode = 2
@@ -320,16 +320,6 @@ theme_override_font_sizes/font_size = 8
 theme_override_styles/normal = SubResource("StyleBoxFlat_xfsuk")
 theme_override_styles/hover = SubResource("StyleBoxFlat_acyck")
 text = "AP Potion"
-
-[node name="Scrap" type="Button" parent="ItemsPanel/Inventory"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("6_4o36p")
-theme_override_font_sizes/font_size = 8
-theme_override_styles/normal = SubResource("StyleBoxFlat_tp8k5")
-theme_override_styles/hover = SubResource("StyleBoxFlat_dciod")
-text = "Scrap"
 
 [node name="ExitItems" type="Button" parent="ItemsPanel/Inventory"]
 layout_mode = 2
@@ -403,6 +393,56 @@ text = "AP:5"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="SurrenderPanel" type="Panel" parent="."]
+visible = false
+offset_left = -30.0
+offset_top = -9.0
+offset_right = 497.0
+offset_bottom = 290.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SurrenderPanel"]
+layout_mode = 2
+offset_top = 232.0
+offset_right = 527.0
+offset_bottom = 292.0
+size_flags_vertical = 3
+
+[node name="YesSurrender" type="Button" parent="SurrenderPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_4o36p")
+theme_override_font_sizes/font_size = 19
+theme_override_styles/normal = SubResource("StyleBoxFlat_trrqh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_t1yo6")
+text = "Yes"
+
+[node name="NoSurrender" type="Button" parent="SurrenderPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_4o36p")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_35wvw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_j2efc")
+text = "No"
+
+[node name="Label" type="Label" parent="SurrenderPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -263.5
+offset_right = 263.5
+offset_bottom = 73.0
+grow_horizontal = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("6_4o36p")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ly66m")
+text = "Are you sure?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="ActionsPanel/Actions/Attacks" to="." method="_on_attacks_pressed"]
 [connection signal="pressed" from="ActionsPanel/Actions/Defend" to="." method="_on_defend_pressed"]
 [connection signal="pressed" from="ActionsPanel/Actions/Surrender" to="." method="_on_surrender_pressed"]
@@ -418,3 +458,5 @@ vertical_alignment = 1
 [connection signal="pressed" from="ItemsPanel/Inventory/APPotion" to="." method="_on_ap_potion_pressed"]
 [connection signal="pressed" from="ItemsPanel/Inventory/ExitItems" to="." method="_on_exit_items_pressed"]
 [connection signal="pressed" from="NoMoreAP" to="." method="_on_no_more_ap_pressed"]
+[connection signal="pressed" from="SurrenderPanel/HBoxContainer/YesSurrender" to="." method="_on_yes_surrender_pressed"]
+[connection signal="pressed" from="SurrenderPanel/HBoxContainer/NoSurrender" to="." method="_on_no_surrender_pressed"]

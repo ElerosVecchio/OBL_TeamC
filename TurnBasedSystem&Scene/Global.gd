@@ -2,6 +2,8 @@ extends Node
 
 var actionpoints = 5
 
+var Surrendering = false
+
 var sworddamage = 150
 var lancedamage = 70
 var hammerdamage = 350
