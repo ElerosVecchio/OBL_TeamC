@@ -19,7 +19,36 @@ func _process(delta):
 	defeat()
 	victory()
 	update_ap()
+	update_hp_potion()
+	update_dmg_potion()
+	update_ap_potion()
+	sword_data()
+	lance_data()
+	hammer_data()
+	wand_data()
+	shield_data()
+	
+func sword_data():
+	var sword = $AttacksPanel/AttacksBox/Sword
+	sword.text = "Sword\n%d DMG\n2 AP" % [Global.sworddamage]
+	
+func lance_data():
+	var lance = $AttacksPanel/AttacksBox/Lance
+	lance.text = "Lance\n%d DMG\n1 AP" % [Global.lancedamage]
 
+func hammer_data():
+	var hammer = $AttacksPanel/AttacksBox/Hammer
+	hammer.text = "Hammer\n%d DMG\n4 AP" % [Global.hammerdamage]
+
+func wand_data():
+	var wand = $AttacksPanel/AttacksBox/Wand
+	wand.text = "Wand\n%d DMG\n7 AP" % [Global.wanddamage]
+	
+func shield_data():
+	var shield = $AttacksPanel/AttacksBox/Shield
+	shield.text = "Shield\n2x Def\n1 AP" 
+
+	
 func _on_attacks_pressed(): #weapons
 	$ActionsPanel.hide()
 	$AttacksPanel.show()
@@ -102,6 +131,18 @@ func _on_surrender_pressed():
 func update_ap():
 	var APPanel = $APPanel
 	APPanel.get_node("Label").text = "AP:%d" % [Global.actionpoints]
+
+func update_hp_potion():
+	var health_potion = $ItemsPanel/Inventory/HealthPotion
+	health_potion.text = "HP Potion:%d" % [Global.healthpotions]
+	
+func update_dmg_potion():
+	var damage_potion = $ItemsPanel/Inventory/DamagePotion
+	damage_potion.text = "DMG Potion:%d" % [Global.damagepotions]
+	
+func update_ap_potion():
+	var ap_potion = $ItemsPanel/Inventory/APPotion
+	ap_potion.text = "AP Potion:%d" % [Global.appotions]
 
 
 
