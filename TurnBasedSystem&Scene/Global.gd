@@ -17,7 +17,7 @@ var scrap = 1
 
 var shielding = 1
 
-var bbegdamage = 170
+var bbegdamage = 200
 
 var playermaxhealth = 1500
 var playercurrenthealth = 1500

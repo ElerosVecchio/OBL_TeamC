@@ -1,15 +1,19 @@
 extends Node2D
 
 var crit = 0
+var spec_effect = 0
+var can_potion = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	can_potion = true
 	Global.playerturn = true
 	$AttacksPanel.hide()
 	$ItemsPanel.hide()
 	$NoMoreAP.hide()
 	$EnemyTurnLabel.hide()
 	$SurrenderPanel.hide()
+	$Debuff.hide()
 	print(Global.actionpoints)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -144,9 +148,13 @@ func update_ap_potion():
 	var ap_potion = $ItemsPanel/Inventory/APPotion
 	ap_potion.text = "AP Potion:%d" % [Global.appotions]
 
-
+var random_roller = 0 
+var debuff_applied = false
 
 func _on_end_turn_pressed():
+	var debuff = $Debuff
+	debuff_applied = false
+	can_potion = true
 	Global.enemyturn = true
 	Global.playerturn = false
 	$ActionsPanel.hide()
@@ -154,18 +162,34 @@ func _on_end_turn_pressed():
 	$EnemyTurnLabel.show()
 	await get_tree().create_timer(2).timeout
 	crit = randi() % 100
-	if Global.bbegcurrenthealth >= Global.bbegmaxhealth * 0.6: #the boss is more likely to crit if it has higher health
+	spec_effect = randi() % 100
+	if Global.bbegcurrenthealth <= Global.bbegmaxhealth * 0.5: #the boss is more likely to crit if it has lower health
 		if crit <= 45:
 			Global.playercurrenthealth -= Global.bbegdamage * 2 * Global.shielding
-			print('Enemy critical hit!')
+			print('Enemy critical hit')
 		else:
 			Global.playercurrenthealth -= Global.bbegdamage * Global.shielding
+		if spec_effect < 50:
+			can_potion = false
+			debuff.text = "The boss has blocked your potions!"
+			debuff_applied = true
+		elif spec_effect > 50:
+			if Global.actionpoints >= 3:
+				Global.actionpoints -= 3
+			else:
+				Global.actionpoints = 0
+			debuff.text = "The boss has sapped your energy!"
+			debuff_applied = true
+		if Global.bbegcurrenthealth <= Global.bbegmaxhealth * 0.3:
+			Global.bbegcurrenthealth += Global.bbegmaxhealth * 0.025
 	elif crit <= 20:
 		Global.playercurrenthealth -= Global.bbegdamage * 2 * Global.shielding
 		print('Enemy critical hit!')
 	else:
 		Global.playercurrenthealth -= Global.bbegdamage * Global.shielding
 	$EnemyTurnLabel.hide()
+	if debuff_applied == true:
+		$Debuff.show()
 	Global.shielding = 1
 	Global.actionpoints += 2
 
@@ -189,6 +213,8 @@ func _on_exit_items_pressed():
 func _on_health_potion_pressed():
 	if Global.healthpotions == 0:
 		$NoMoreAP.show()
+	if can_potion == false:
+		$Debuff.show()
 	else:
 		Global.healthpotions -= 1
 		if Global.playercurrenthealth >= Global.playermaxhealth * 0.7: #checks if player current health is above 70%
@@ -200,6 +226,8 @@ func _on_health_potion_pressed():
 func _on_ap_potion_pressed():
 	if Global.appotions == 0:
 		$NoMoreAP.show()
+	if can_potion == false:
+		$Debuff.show()
 	else:
 		Global.appotions -= 1
 		Global.actionpoints += 2
@@ -209,6 +237,8 @@ func _on_ap_potion_pressed():
 func _on_damage_potion_pressed():
 	if Global.damagepotions == 0:
 		$NoMoreAP.show()
+	if can_potion == false:
+		$Debuff.show()
 	else:
 		Global.damagepotions -= 1
 		Global.sworddamage += 50
@@ -223,3 +253,7 @@ func _on_yes_surrender_pressed():
 
 func _on_no_surrender_pressed():
 	$SurrenderPanel.hide()
+
+
+func _on_debuff_pressed():
+	$Debuff.hide()

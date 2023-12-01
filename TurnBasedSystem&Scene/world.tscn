@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cp3kcps83rmeb"]
+[gd_scene load_steps=46 format=3 uid="uid://cp3kcps83rmeb"]
 
 [ext_resource type="Script" path="res://TurnBasedSystem&Scene/world.gd" id="1_24vmh"]
 [ext_resource type="PackedScene" uid="uid://bmmai14isviqg" path="res://TurnBasedSystem&Scene/hero.tscn" id="3_cp336"]
@@ -119,6 +119,9 @@ bg_color = Color(1, 1, 1, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ly66m"]
 bg_color = Color(0, 0, 0, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7nead"]
+bg_color = Color(0, 0, 0, 1)
+
 [node name="world" type="Node2D"]
 script = ExtResource("1_24vmh")
 
@@ -200,6 +203,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_ki5dx")
 text = "End Turn"
 
 [node name="AttacksPanel" type="Panel" parent="."]
+visible = false
 offset_left = -5.0
 offset_top = 220.0
 offset_right = 466.0
@@ -276,6 +280,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_7hyb5")
 text = "Back"
 
 [node name="ItemsPanel" type="Panel" parent="."]
+visible = false
 offset_left = -5.0
 offset_top = 221.0
 offset_right = 465.0
@@ -441,6 +446,16 @@ text = "Are you sure?"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Debuff" type="Button" parent="."]
+offset_left = -5.0
+offset_top = 220.0
+offset_right = 465.0
+offset_bottom = 282.0
+theme_override_fonts/font = ExtResource("6_4o36p")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_7nead")
+text = "The Boss has debuffed YOU!"
+
 [connection signal="pressed" from="ActionsPanel/Actions/Attacks" to="." method="_on_attacks_pressed"]
 [connection signal="pressed" from="ActionsPanel/Actions/Defend" to="." method="_on_defend_pressed"]
 [connection signal="pressed" from="ActionsPanel/Actions/Surrender" to="." method="_on_surrender_pressed"]
@@ -458,3 +473,4 @@ vertical_alignment = 1
 [connection signal="pressed" from="NoMoreAP" to="." method="_on_no_more_ap_pressed"]
 [connection signal="pressed" from="SurrenderPanel/HBoxContainer/YesSurrender" to="." method="_on_yes_surrender_pressed"]
 [connection signal="pressed" from="SurrenderPanel/HBoxContainer/NoSurrender" to="." method="_on_no_surrender_pressed"]
+[connection signal="pressed" from="Debuff" to="." method="_on_debuff_pressed"]
