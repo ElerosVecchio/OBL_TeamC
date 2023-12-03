@@ -28,6 +28,7 @@ Global="*res://TurnBasedSystem&Scene/Global.gd"
 [display]
 
 window/stretch/mode="viewport"
+window/stretch/scale=2.0
 
 [rendering]
 
