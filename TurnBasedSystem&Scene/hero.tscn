@@ -240,9 +240,7 @@ bg_color = Color(0.0588235, 0.72549, 0, 1)
 position = Vector2(4, -31)
 scale = Vector2(0.0865, 0.0658271)
 sprite_frames = SubResource("SpriteFrames_l77hm")
-animation = &"HP Potion"
-frame = 5
-frame_progress = 1.0
+animation = &"Sword"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

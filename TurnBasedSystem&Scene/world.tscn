@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://cp3kcps83rmeb"]
+[gd_scene load_steps=56 format=3 uid="uid://cp3kcps83rmeb"]
 
 [ext_resource type="Script" path="res://TurnBasedSystem&Scene/world.gd" id="1_24vmh"]
 [ext_resource type="PackedScene" uid="uid://bmmai14isviqg" path="res://TurnBasedSystem&Scene/hero.tscn" id="3_cp336"]
@@ -7,6 +7,15 @@
 [ext_resource type="Texture2D" uid="uid://dtqj6weh4wbt1" path="res://TurnBasedSystem&Scene/Placeholder Sprites/cegqlbo71df61.png" id="5_ruwri"]
 [ext_resource type="FontFile" uid="uid://dtyyb1av647aj" path="res://TurnBasedSystem&Scene/Placeholder Sprites/Super Mario Bros. NES.ttf" id="6_4o36p"]
 [ext_resource type="Script" path="res://TurnBasedSystem&Scene/bbeg.gd" id="6_hvp2g"]
+[ext_resource type="AudioStream" uid="uid://cgiu8modol1x0" path="res://Audio/vgdc_obl_boss_trimmed.mp3" id="8_602pd"]
+[ext_resource type="AudioStream" uid="uid://bf5kwsho6a8th" path="res://Audio/vgdc_obl_sfx_hammer.mp3" id="9_5pue1"]
+[ext_resource type="AudioStream" uid="uid://7seqthlc6fw3" path="res://Audio/vgdc_obl_sfx_potion_health.mp3" id="10_1txl8"]
+[ext_resource type="AudioStream" uid="uid://ditgy0pte1733" path="res://Audio/vgdc_obl_sfx_potion_speed.mp3" id="11_oyg1a"]
+[ext_resource type="AudioStream" uid="uid://c3cdqccuv12rq" path="res://Audio/vgdc_obl_sfx_potion_strength.mp3" id="12_dtufe"]
+[ext_resource type="AudioStream" uid="uid://bfhkiy138ij1m" path="res://Audio/vgdc_obl_sfx_shield.mp3" id="13_ixy8g"]
+[ext_resource type="AudioStream" uid="uid://jw6bhu2ch06q" path="res://Audio/vgdc_obl_sfx_spear.mp3" id="14_8krhi"]
+[ext_resource type="AudioStream" uid="uid://bjfsb0nnoutaj" path="res://Audio/vgdc_obl_sfx_sword.mp3" id="15_p6f6g"]
+[ext_resource type="AudioStream" uid="uid://csclmwl3np32d" path="res://Audio/vgdc_obl_sfx_wand_var1.mp3" id="16_bbibo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5hkgt"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -460,6 +469,45 @@ theme_override_font_sizes/font_size = 13
 theme_override_styles/normal = SubResource("StyleBoxFlat_7nead")
 theme_override_styles/hover = SubResource("StyleBoxFlat_p3mqt")
 text = "The Boss has debuffed YOU!"
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="BossMusic" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("8_602pd")
+autoplay = true
+bus = &"Music"
+
+[node name="Hammer" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("9_5pue1")
+bus = &"SoundEffects"
+
+[node name="HP Potion" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("10_1txl8")
+bus = &"SoundEffects"
+
+[node name="AP Potion" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("11_oyg1a")
+bus = &"SoundEffects"
+
+[node name="DMG Potion" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("12_dtufe")
+bus = &"SoundEffects"
+
+[node name="Shield" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("13_ixy8g")
+bus = &"SoundEffects"
+
+[node name="Spear" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("14_8krhi")
+bus = &"SoundEffects"
+
+[node name="Sword" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("15_p6f6g")
+bus = &"SoundEffects"
+
+[node name="Wand" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("16_bbibo")
+bus = &"SoundEffects"
 
 [connection signal="pressed" from="ActionsPanel/Actions/Attacks" to="." method="_on_attacks_pressed"]
 [connection signal="pressed" from="ActionsPanel/Actions/Defend" to="." method="_on_defend_pressed"]

@@ -69,6 +69,7 @@ func _on_exit_attack_pressed():
 func _on_lightning_bolt_pressed(): #sword
 	Global.current_attack = 'Sword'
 	if Global.actionpoints >= 2:
+		$Audio/Sword.play()
 		Global.playerattacking = true
 		crit = randi() % 100
 		if crit <= 50:
@@ -84,6 +85,7 @@ func _on_lightning_bolt_pressed(): #sword
 func _on_fireball_pressed(): #lance
 	Global.current_attack = 'Spear'
 	if Global.actionpoints >= 1:
+		$Audio/Spear.play()
 		Global.playerattacking = true
 		crit = randi() % 100
 		if crit <= 20:
@@ -98,6 +100,7 @@ func _on_fireball_pressed(): #lance
 func _on_icicle_crash_pressed(): #hammer
 	Global.current_attack = 'Hammer'
 	if Global.actionpoints >= 4:
+		$Audio/Hammer.play()
 		Global.playerattacking = true
 		crit = randi() % 100
 		if crit <= 65:
@@ -112,6 +115,7 @@ func _on_icicle_crash_pressed(): #hammer
 func _on_wand_pressed():
 	Global.current_attack = 'Spear'
 	if Global.actionpoints >= 7:
+		$Audio/Wand.play()
 		Global.playerattacking = true
 		Global.bbegcurrenthealth -= Global.wanddamage
 		Global.actionpoints -= 7
@@ -121,6 +125,7 @@ func _on_wand_pressed():
 func _on_shield_pressed():
 	Global.current_attack = 'Shield'
 	if Global.actionpoints >= 1:
+		$Audio/Shield.play()
 		Global.playerattacking = true
 		Global.bbegcurrenthealth -= Global.shielddamage
 		Global.shielding = 0.5
@@ -165,6 +170,7 @@ func _on_end_turn_pressed():
 	$ActionsPanel.hide()
 	$AttacksPanel.hide()
 	$EnemyTurnLabel.show()
+	$Audio/Spear.play()
 	await get_tree().create_timer(2).timeout
 	crit = randi() % 100
 	spec_effect = randi() % 100
@@ -242,6 +248,7 @@ func _on_health_potion_pressed():
 	if can_potion == false:
 		$Debuff.show()
 	elif Global.healthpotions != 0 and can_potion == true:
+		$"Audio/HP Potion".play()
 		Global.current_potion = 'HP Potion'
 		Global.drinkingpotion = true
 		Global.healthpotions -= 1
@@ -257,6 +264,7 @@ func _on_ap_potion_pressed():
 	if can_potion == false:
 		$Debuff.show()
 	elif Global.appotions != 0 and can_potion == true:
+		$"Audio/AP Potion".play()
 		Global.current_potion = 'AP Potion'
 		Global.drinkingpotion = true
 		Global.appotions -= 1
@@ -270,6 +278,7 @@ func _on_damage_potion_pressed():
 	if can_potion == false:
 		$Debuff.show()
 	elif Global.damagepotions != 0 and can_potion == true:
+		$"Audio/DMG Potion".play()
 		Global.current_potion = 'DMG Potion'
 		Global.drinkingpotion = true
 		damage_potion_consumed = true
@@ -290,3 +299,4 @@ func _on_no_surrender_pressed():
 
 func _on_debuff_pressed():
 	$Debuff.hide()
+

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dixnt2bt83tcy"
+path="res://.godot/imported/vgdc_obl_sfx_walk.mp3-32a29f6c27c0135bc39fb12e89c44718.mp3str"
+
+[deps]
+
+source_file="res://scene(walking map)/vgdc_obl_sfx_walk.mp3"
+dest_files=["res://.godot/imported/vgdc_obl_sfx_walk.mp3-32a29f6c27c0135bc39fb12e89c44718.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

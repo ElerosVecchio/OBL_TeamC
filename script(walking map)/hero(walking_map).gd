@@ -6,9 +6,12 @@ var current_dir = "none"
 func _ready():
 	$AnimatedSprite2D.play("front_idle")
 
+func _process(delta):
+	if (Input.is_action_pressed("ui_right") or Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_down") or Input.is_action_pressed("ui_up")) and (not $AudioStreamPlayer.playing):
+			$AudioStreamPlayer.play()
+
 func _physics_process(delta):
 	player_movement(delta)
-
 
 func player_movement(delta):
 	if Input.is_action_pressed("ui_right"):

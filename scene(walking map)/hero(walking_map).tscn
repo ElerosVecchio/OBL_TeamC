@@ -1,7 +1,8 @@
-[gd_scene load_steps=27 format=3 uid="uid://de8b1jschuwwo"]
+[gd_scene load_steps=28 format=3 uid="uid://de8b1jschuwwo"]
 
 [ext_resource type="Script" path="res://script(walking map)/hero(walking_map).gd" id="1_atvds"]
 [ext_resource type="Texture2D" uid="uid://b7ail3h52vt3q" path="res://TurnBasedSystem&Scene/Placeholder Sprites/AnimationSheet_Character.png" id="1_rluv0"]
+[ext_resource type="AudioStream" uid="uid://csjeqsijxw7ar" path="res://Audio/vgdc_obl_sfx_walk.mp3" id="3_0vxap"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jyox8"]
 radius = 7.0
@@ -204,3 +205,7 @@ limit_right = 543
 limit_bottom = 256
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_0vxap")
+bus = &"SoundEffects"

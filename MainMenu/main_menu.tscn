@@ -1,8 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://cd0xyan3slpu3"]
+[gd_scene load_steps=10 format=3 uid="uid://cd0xyan3slpu3"]
 
 [ext_resource type="Script" path="res://MainMenu/main_menu.gd" id="1_j3xqe"]
-[ext_resource type="Texture2D" uid="uid://dpe0ckn6typcr" path="res://icon.svg" id="2_xy1mj"]
+[ext_resource type="AudioStream" uid="uid://cdmhc07drpl7e" path="res://MainMenu/menu_music.mp3" id="3_7n3qy"]
 [ext_resource type="Script" path="res://Item scripts/ItemScene.gd" id="3_e3sc7"]
+[ext_resource type="Texture2D" uid="uid://dtqj6weh4wbt1" path="res://TurnBasedSystem&Scene/Placeholder Sprites/cegqlbo71df61.png" id="4_uhvmk"]
+[ext_resource type="Texture2D" uid="uid://b3u2hv2cxmwp5" path="res://MainMenu/Screenshot 2023-12-03 233104.png" id="5_h1sqb"]
+[ext_resource type="Texture2D" uid="uid://b5anhwv6v1b66" path="res://TurnBasedSystem&Scene/art/OBL art/IDLE2.png" id="6_1q2mu"]
+[ext_resource type="FontFile" uid="uid://dtyyb1av647aj" path="res://TurnBasedSystem&Scene/Placeholder Sprites/Super Mario Bros. NES.ttf" id="7_8cyfy"]
+[ext_resource type="Texture2D" uid="uid://crxg7d68hjeni" path="res://TurnBasedSystem&Scene/art/OBL art/cthulutitle.png.png" id="8_uqj5o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_82tc6"]
+bg_color = Color(0, 0, 0, 1)
 
 [node name="MainMenu" type="Node2D"]
 position = Vector2(577, 463)
@@ -16,10 +24,10 @@ anchor_left = 0.441
 anchor_top = 0.591
 anchor_right = 0.560264
 anchor_bottom = 0.684
-offset_left = -0.0320129
-offset_top = 0.0319824
-offset_right = 0.575928
-offset_bottom = -0.231964
+offset_left = -20.032
+offset_top = -2.96802
+offset_right = -19.4241
+offset_bottom = -3.23196
 action_mode = 0
 text = "PLAY"
 metadata/_edit_use_anchors_ = true
@@ -30,10 +38,10 @@ anchor_left = 0.441
 anchor_top = 0.713
 anchor_right = 0.56
 anchor_bottom = 0.804
-offset_left = -0.0320129
-offset_top = -0.0240479
-offset_right = 0.880005
-offset_bottom = 0.00799561
+offset_left = -20.032
+offset_top = -3.02405
+offset_right = -19.12
+offset_bottom = -2.992
 action_mode = 0
 text = "QUIT"
 metadata/_edit_use_anchors_ = true
@@ -44,31 +52,60 @@ anchor_left = 0.441
 anchor_top = 0.833
 anchor_right = 0.561
 anchor_bottom = 0.923
-offset_left = -0.0320435
-offset_top = 0.215942
-offset_right = -0.272034
-offset_bottom = -0.104065
+offset_left = -20.032
+offset_top = -2.78406
+offset_right = -20.272
+offset_bottom = -3.10406
 action_mode = 0
 text = "OPTIONS"
 metadata/_edit_use_anchors_ = true
 
-[node name="title_image" type="TextureRect" parent="MainMenuCanvas"]
-editor_description = "Placeholder Title Image
-"
-anchors_preset = -1
-anchor_left = 0.366
-anchor_top = 0.079
-anchor_right = 0.637
-anchor_bottom = 0.552
-offset_left = 0.367981
-offset_top = -0.192001
-offset_right = 0.175964
-offset_bottom = 0.303955
-texture = ExtResource("2_xy1mj")
-metadata/_edit_use_anchors_ = true
-
 [node name="Item generation scene" type="Node" parent="."]
 script = ExtResource("3_e3sc7")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_7n3qy")
+autoplay = true
+bus = &"Music"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -692.0
+offset_top = -508.0
+offset_right = 5947.0
+offset_bottom = 3262.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_uhvmk")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.603922)
+offset_left = -692.0
+offset_top = -508.0
+offset_right = 5947.0
+offset_bottom = 3262.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_h1sqb")
+
+[node name="Idle2" type="Sprite2D" parent="."]
+position = Vector2(-422, -21)
+scale = Vector2(0.299, 0.299)
+texture = ExtResource("6_1q2mu")
+
+[node name="Title" type="Label" parent="."]
+offset_left = -323.0
+offset_top = -346.0
+offset_right = 271.0
+offset_bottom = -253.0
+theme_override_fonts/font = ExtResource("7_8cyfy")
+theme_override_font_sizes/font_size = 42
+theme_override_styles/normal = SubResource("StyleBoxFlat_82tc6")
+text = "ONE BOSS LEFT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cthulutitle_png" type="Sprite2D" parent="."]
+position = Vector2(361, -43)
+scale = Vector2(5.93831, 5.93831)
+texture = ExtResource("8_uqj5o")
 
 [connection signal="pressed" from="MainMenuCanvas/btn_play" to="." method="_on_btn_play_pressed"]
 [connection signal="pressed" from="MainMenuCanvas/btn_quit" to="." method="on_quit_button_pressed"]

@@ -24,5 +24,5 @@ func open_options_menu():
 # Finished play button
 func _on_btn_play_pressed():
 	print("PLAY button pressed.")
-	var world_scene = preload("res://TurnBasedSystem&Scene/world.tscn")
+	var world_scene = preload("res://scene(walking map)/walking_map.tscn")
 	get_tree().change_scene_to_packed(world_scene)

@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://drpef5igf60j2"]
+[gd_scene load_steps=12 format=3 uid="uid://drpef5igf60j2"]
 
 [ext_resource type="Script" path="res://scene(walking map)/walking_map.gd" id="1_7b5hm"]
 [ext_resource type="Texture2D" uid="uid://doo1vyxpcqfar" path="res://TurnBasedSystem&Scene/art/sprites/tilesets/plains.png" id="1_kv860"]
 [ext_resource type="Texture2D" uid="uid://d5eycrf1y7sn" path="res://TurnBasedSystem&Scene/art/sprites/tilesets/grass.png" id="2_5a2iq"]
 [ext_resource type="Texture2D" uid="uid://7y5vjnvjyqu5" path="res://TurnBasedSystem&Scene/art/sprites/objects/objects.png" id="3_734fl"]
 [ext_resource type="PackedScene" uid="uid://de8b1jschuwwo" path="res://scene(walking map)/hero(walking_map).tscn" id="4_s7752"]
+[ext_resource type="AudioStream" uid="uid://lqjn34rvkdf3" path="res://Audio/vgdc_obl_title_theme.mp3" id="6_6t8t8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jf3jl"]
 texture = ExtResource("1_kv860")
@@ -931,6 +932,11 @@ position = Vector2(557, 160)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-5, 0)
 shape = SubResource("RectangleShape2D_u4p5j")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_6t8t8")
+autoplay = true
+bus = &"Music"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
