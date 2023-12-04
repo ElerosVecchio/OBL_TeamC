@@ -236,7 +236,7 @@ func _on_health_potion_pressed():
 		$NoMoreAP.show()
 	if can_potion == false:
 		$Debuff.show()
-	else:
+	elif Global.healthpotions != 0 and can_potion == true:
 		Global.healthpotions -= 1
 		if Global.playercurrenthealth >= Global.playermaxhealth * 0.7: #checks if player current health is above 70%
 			Global.playercurrenthealth = Global.playermaxhealth
@@ -249,7 +249,7 @@ func _on_ap_potion_pressed():
 		$NoMoreAP.show()
 	if can_potion == false:
 		$Debuff.show()
-	else:
+	elif Global.appotions != 0 and can_potion == true:
 		Global.appotions -= 1
 		Global.actionpoints += 2
 
@@ -260,7 +260,7 @@ func _on_damage_potion_pressed():
 		$NoMoreAP.show()
 	if can_potion == false:
 		$Debuff.show()
-	else:
+	elif Global.damagepotions != 0 and can_potion == true:
 		damage_potion_consumed = true
 		Global.damagepotions -= 1
 		Global.sworddamage += 50
