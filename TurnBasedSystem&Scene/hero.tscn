@@ -1,15 +1,92 @@
-[gd_scene load_steps=13 format=3 uid="uid://bmmai14isviqg"]
+[gd_scene load_steps=21 format=3 uid="uid://bmmai14isviqg"]
 
 [ext_resource type="Texture2D" uid="uid://cg0pen7o6qoqf" path="res://TurnBasedSystem&Scene/art/OBL art/fixed_hammer.png" id="1_hnoah"]
 [ext_resource type="FontFile" uid="uid://dtyyb1av647aj" path="res://TurnBasedSystem&Scene/Placeholder Sprites/Super Mario Bros. NES.ttf" id="2_g2m40"]
+[ext_resource type="Texture2D" uid="uid://scvxr8kko0qn" path="res://TurnBasedSystem&Scene/art/OBL art/AP.png" id="2_i7hk2"]
 [ext_resource type="Texture2D" uid="uid://d3sfmpynq2kmk" path="res://TurnBasedSystem&Scene/art/OBL art/hammer_two.png" id="2_imy52"]
 [ext_resource type="Texture2D" uid="uid://cb8pfl7xcspmr" path="res://TurnBasedSystem&Scene/art/OBL art/fixed_hurt.png" id="3_0fnnd"]
+[ext_resource type="Texture2D" uid="uid://cvtyjlrgvreut" path="res://TurnBasedSystem&Scene/art/OBL art/DMG.png" id="3_1sfc7"]
 [ext_resource type="Texture2D" uid="uid://d2p7vlcrsdipx" path="res://TurnBasedSystem&Scene/art/OBL art/hurt_two.png" id="4_0rbqk"]
+[ext_resource type="Texture2D" uid="uid://da63thufh3rxg" path="res://TurnBasedSystem&Scene/art/OBL art/HP.png" id="4_ag288"]
+[ext_resource type="Texture2D" uid="uid://b5anhwv6v1b66" path="res://TurnBasedSystem&Scene/art/OBL art/IDLE2.png" id="5_r1aiy"]
 [ext_resource type="Texture2D" uid="uid://c151e4k5w3v3r" path="res://TurnBasedSystem&Scene/art/OBL art/fixed_spear.png" id="5_y3xpr"]
+[ext_resource type="Texture2D" uid="uid://drchcs2x52odl" path="res://TurnBasedSystem&Scene/art/OBL art/SHIELD.png" id="6_el7kv"]
 [ext_resource type="Texture2D" uid="uid://fb538x48trcs" path="res://TurnBasedSystem&Scene/art/OBL art/spear_two.png" id="6_fbxlr"]
+[ext_resource type="Texture2D" uid="uid://dxefv1mnsrcdb" path="res://TurnBasedSystem&Scene/art/OBL art/SHIELD2.png" id="7_bvk6j"]
+[ext_resource type="Texture2D" uid="uid://dfws6xje2b1k5" path="res://TurnBasedSystem&Scene/art/OBL art/SWORDATK.png" id="10_qm0f7"]
+[ext_resource type="Texture2D" uid="uid://d3k32ya7t7477" path="res://TurnBasedSystem&Scene/art/OBL art/SWORDATK2.png" id="11_m407i"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_l77hm"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_r1aiy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_i7hk2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_r1aiy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_i7hk2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_r1aiy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_i7hk2")
+}],
+"loop": false,
+"name": &"AP Potion",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_r1aiy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1sfc7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_r1aiy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1sfc7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_r1aiy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1sfc7")
+}],
+"loop": false,
+"name": &"DMG Potion",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_r1aiy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ag288")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_r1aiy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ag288")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_r1aiy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ag288")
+}],
+"loop": false,
+"name": &"HP Potion",
+"speed": 8.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_hnoah")
@@ -61,10 +138,33 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_0fnnd")
+"texture": ExtResource("5_r1aiy")
 }],
 "loop": false,
 "name": &"Idle",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_el7kv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_bvk6j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_el7kv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_bvk6j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_el7kv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_bvk6j")
+}],
+"loop": false,
+"name": &"Shield",
 "speed": 8.0
 }, {
 "frames": [{
@@ -88,6 +188,29 @@ animations = [{
 }],
 "loop": false,
 "name": &"Spear",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_qm0f7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_m407i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qm0f7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_m407i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qm0f7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_m407i")
+}],
+"loop": false,
+"name": &"Sword",
 "speed": 8.0
 }]
 
@@ -114,10 +237,12 @@ bg_color = Color(0.0588235, 0.72549, 0, 1)
 [node name="hero" type="CharacterBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(6, -27)
+position = Vector2(4, -31)
 scale = Vector2(0.0865, 0.0658271)
 sprite_frames = SubResource("SpriteFrames_l77hm")
-animation = &"Hammer"
+animation = &"HP Potion"
+frame = 5
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

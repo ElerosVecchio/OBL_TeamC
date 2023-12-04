@@ -30,6 +30,8 @@ var enemyturn = false
 
 var playerattacking = false
 var current_attack = 'Hammer'
+var drinkingpotion = false
+var current_potion = 'AP Potion'
 
 var bbegdefeated = false
 var playerdefeated = false
