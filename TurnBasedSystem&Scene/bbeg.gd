@@ -21,6 +21,7 @@ func update_bbeghealth():
 
 func bbegattacking():
 	if Global.enemyturn == true:
+		#Global.bbegattacking = true
 		not_idle = true
 		$AnimatedSprite2D.play('evil_attack')
 		await $AnimatedSprite2D.animation_finished

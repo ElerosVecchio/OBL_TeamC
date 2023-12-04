@@ -70,6 +70,6 @@ metadata/_edit_use_anchors_ = true
 [node name="Item generation scene" type="Node" parent="."]
 script = ExtResource("3_e3sc7")
 
-[connection signal="pressed" from="MainMenuCanvas/btn_play" to="." method="on_play_button_pressed"]
+[connection signal="pressed" from="MainMenuCanvas/btn_play" to="." method="_on_btn_play_pressed"]
 [connection signal="pressed" from="MainMenuCanvas/btn_quit" to="." method="on_quit_button_pressed"]
 [connection signal="pressed" from="MainMenuCanvas/btn_options" to="." method="on_options_button_pressed"]

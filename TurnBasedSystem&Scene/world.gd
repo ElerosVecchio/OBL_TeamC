@@ -67,6 +67,7 @@ func _on_exit_attack_pressed():
 	$ActionsPanel.show()
 
 func _on_lightning_bolt_pressed(): #sword
+	Global.current_attack = 'Spear'
 	if Global.actionpoints >= 2:
 		Global.playerattacking = true
 		crit = randi() % 100
@@ -81,6 +82,7 @@ func _on_lightning_bolt_pressed(): #sword
 		
 
 func _on_fireball_pressed(): #lance
+	Global.current_attack = 'Spear'
 	if Global.actionpoints >= 1:
 		Global.playerattacking = true
 		crit = randi() % 100
@@ -94,6 +96,7 @@ func _on_fireball_pressed(): #lance
 		$NoMoreAP.show()
 		
 func _on_icicle_crash_pressed(): #hammer
+	Global.current_attack = 'Hammer'
 	if Global.actionpoints >= 4:
 		Global.playerattacking = true
 		crit = randi() % 100
@@ -107,6 +110,7 @@ func _on_icicle_crash_pressed(): #hammer
 		$NoMoreAP.show()
 		
 func _on_wand_pressed():
+	Global.current_attack = 'Spear'
 	if Global.actionpoints >= 7:
 		Global.playerattacking = true
 		Global.bbegcurrenthealth -= Global.wanddamage
@@ -115,6 +119,7 @@ func _on_wand_pressed():
 		$NoMoreAP.show()
 
 func _on_shield_pressed():
+	Global.current_attack = 'Hammer'
 	if Global.actionpoints >= 1:
 		Global.playerattacking = true
 		Global.bbegcurrenthealth -= Global.shielddamage

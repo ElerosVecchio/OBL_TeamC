@@ -6,7 +6,7 @@ extends Node2D
 # Placeholder for quit button functionality
 func on_quit_button_pressed():
 	print("QUIT button pressed.")
-	# tree.quit()
+	tree.quit()
 
 
 # Placeholder for options button functionality

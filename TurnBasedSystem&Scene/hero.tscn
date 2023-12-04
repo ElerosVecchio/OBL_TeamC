@@ -1,104 +1,98 @@
-[gd_scene load_steps=18 format=3 uid="uid://bmmai14isviqg"]
+[gd_scene load_steps=13 format=3 uid="uid://bmmai14isviqg"]
 
-[ext_resource type="Texture2D" uid="uid://b35c053ltq544" path="res://TurnBasedSystem&Scene/art/oblhammer.png" id="1_kfkdn"]
-[ext_resource type="Texture2D" uid="uid://b7ail3h52vt3q" path="res://TurnBasedSystem&Scene/Placeholder Sprites/AnimationSheet_Character.png" id="1_oo7lt"]
+[ext_resource type="Texture2D" uid="uid://cg0pen7o6qoqf" path="res://TurnBasedSystem&Scene/art/OBL art/fixed_hammer.png" id="1_hnoah"]
 [ext_resource type="FontFile" uid="uid://dtyyb1av647aj" path="res://TurnBasedSystem&Scene/Placeholder Sprites/Super Mario Bros. NES.ttf" id="2_g2m40"]
-[ext_resource type="Texture2D" uid="uid://ba0r3tifobe24" path="res://TurnBasedSystem&Scene/art/standing.png" id="2_s0ei0"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h6oe7"]
-atlas = ExtResource("1_oo7lt")
-region = Rect2(0, 224, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_34cei"]
-atlas = ExtResource("1_oo7lt")
-region = Rect2(32, 224, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_duj0n"]
-atlas = ExtResource("1_oo7lt")
-region = Rect2(64, 224, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e8khv"]
-atlas = ExtResource("1_oo7lt")
-region = Rect2(96, 224, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l7wy7"]
-atlas = ExtResource("1_oo7lt")
-region = Rect2(128, 224, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ki8xn"]
-atlas = ExtResource("1_oo7lt")
-region = Rect2(160, 224, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kwq7e"]
-atlas = ExtResource("1_oo7lt")
-region = Rect2(192, 224, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_daeb3"]
-atlas = ExtResource("1_oo7lt")
-region = Rect2(224, 224, 32, 32)
+[ext_resource type="Texture2D" uid="uid://d3sfmpynq2kmk" path="res://TurnBasedSystem&Scene/art/OBL art/hammer_two.png" id="2_imy52"]
+[ext_resource type="Texture2D" uid="uid://cb8pfl7xcspmr" path="res://TurnBasedSystem&Scene/art/OBL art/fixed_hurt.png" id="3_0fnnd"]
+[ext_resource type="Texture2D" uid="uid://d2p7vlcrsdipx" path="res://TurnBasedSystem&Scene/art/OBL art/hurt_two.png" id="4_0rbqk"]
+[ext_resource type="Texture2D" uid="uid://c151e4k5w3v3r" path="res://TurnBasedSystem&Scene/art/OBL art/fixed_spear.png" id="5_y3xpr"]
+[ext_resource type="Texture2D" uid="uid://fb538x48trcs" path="res://TurnBasedSystem&Scene/art/OBL art/spear_two.png" id="6_fbxlr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_l77hm"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_kfkdn")
+"texture": ExtResource("1_hnoah")
 }, {
 "duration": 1.0,
-"texture": ExtResource("1_kfkdn")
+"texture": ExtResource("2_imy52")
 }, {
 "duration": 1.0,
-"texture": ExtResource("1_kfkdn")
+"texture": ExtResource("1_hnoah")
 }, {
 "duration": 1.0,
-"texture": ExtResource("1_kfkdn")
+"texture": ExtResource("2_imy52")
 }, {
 "duration": 1.0,
-"texture": ExtResource("1_kfkdn")
+"texture": ExtResource("1_hnoah")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_imy52")
 }],
 "loop": false,
-"name": &"Attack",
+"name": &"Hammer",
 "speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_h6oe7")
+"texture": ExtResource("3_0fnnd")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_34cei")
+"texture": ExtResource("4_0rbqk")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_duj0n")
+"texture": ExtResource("3_0fnnd")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_e8khv")
+"texture": ExtResource("4_0rbqk")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_l7wy7")
+"texture": ExtResource("3_0fnnd")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ki8xn")
+"texture": ExtResource("4_0rbqk")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kwq7e")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_daeb3")
+"texture": ExtResource("3_0fnnd")
 }],
 "loop": false,
-"name": &"Die",
+"name": &"Hurt",
 "speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_s0ei0")
+"texture": ExtResource("3_0fnnd")
 }],
-"loop": true,
+"loop": false,
 "name": &"Idle",
-"speed": 2.0
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_y3xpr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fbxlr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_y3xpr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fbxlr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_y3xpr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fbxlr")
+}],
+"loop": false,
+"name": &"Spear",
+"speed": 8.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_67cay"]
-size = Vector2(159, 122)
+size = Vector2(103, 99.5)
 
 [sub_resource type="Theme" id="Theme_cuq3s"]
 
@@ -120,13 +114,14 @@ bg_color = Color(0.0588235, 0.72549, 0, 1)
 [node name="hero" type="CharacterBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-0.499992, -43.5)
-scale = Vector2(0.106, 0.0806667)
+position = Vector2(6, -27)
+scale = Vector2(0.0865, 0.0658271)
 sprite_frames = SubResource("SpriteFrames_l77hm")
-animation = &"Attack"
+animation = &"Hammer"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -43)
+visible = false
+position = Vector2(2, -28)
 shape = SubResource("RectangleShape2D_67cay")
 
 [node name="healthbar" type="ProgressBar" parent="."]

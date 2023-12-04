@@ -29,6 +29,7 @@ var playerturn = true
 var enemyturn = false
 
 var playerattacking = false
+var current_attack = 'Hammer'
 
 var bbegdefeated = false
 var playerdefeated = false

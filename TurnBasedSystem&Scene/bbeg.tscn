@@ -293,7 +293,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hlqs0"]
-size = Vector2(62, 64)
+size = Vector2(124, 128)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k372m"]
 bg_color = Color(0.847059, 0, 0.0470588, 1)
@@ -313,11 +313,14 @@ bg_color = Color(0.780392, 0, 0.929412, 1)
 [node name="bbeg" type="CharacterBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -49)
+scale = Vector2(2.23214, 2.23214)
 sprite_frames = SubResource("SpriteFrames_lg2by")
 animation = &"evil_attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 8)
+visible = false
+position = Vector2(0, -24)
 shape = SubResource("RectangleShape2D_hlqs0")
 
 [node name="healthbar" type="ProgressBar" parent="."]
