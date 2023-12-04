@@ -36,4 +36,4 @@ func defeat():
 		not_idle = true
 		$AnimatedSprite2D.play('evil_death')
 		await $AnimatedSprite2D.animation_finished
-		get_tree().quit()
+		get_tree().change_scene_to_file("res://MainMenu/main_menu.tscn")

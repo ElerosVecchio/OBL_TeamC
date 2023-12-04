@@ -42,3 +42,22 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+func reset_game():
+	actionpoints = 5
+	Surrendering = false
+	healthpotions = 2
+	damagepotions = 1
+	appotions = 2
+	scrap = 1
+	shielding = 1
+	playercurrenthealth = 1500
+	bbegcurrenthealth = 2500
+	playerturn = true
+	enemyturn = false
+	playerattacking = false
+	current_attack = 'Hammer'
+	drinkingpotion = false
+	current_potion = 'AP Potion'
+	bbegdefeated = false
+	playerdefeated = false

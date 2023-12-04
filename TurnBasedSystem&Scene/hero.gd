@@ -68,6 +68,8 @@ func defeat():
 		tween.tween_property(self, "position", position - Vector2(0, -250), 1)
 		tween1.tween_property(self, "modulate:a", 0, 0.3)
 		await $AnimatedSprite2D.animation_finished
-		get_tree().quit()
+		Global.Surrendering = false
+		Global.playerdefeated = false
+		get_tree().change_scene_to_file("res://MainMenu/main_menu.tscn")
 		
 		
