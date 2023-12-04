@@ -6,6 +6,7 @@ func _physics_process(delta):
 	hero_animations()
 	update_health()
 	attacking()
+	potion()
 	hurt()
 	defeat()
 	
@@ -26,11 +27,28 @@ func attacking():
 			$AnimatedSprite2D.play('Hammer')
 		elif Global.current_attack == 'Spear':
 			$AnimatedSprite2D.play('Spear')
+		elif Global.current_attack == 'Sword':
+			$AnimatedSprite2D.play('Sword')
+		elif Global.current_attack == 'Shield':
+			$AnimatedSprite2D.play('Shield')
 		await $AnimatedSprite2D.animation_finished
 		Global.playerattacking = false
 		not_idle = false
 	else:
 		pass
+
+func potion():
+	if Global.drinkingpotion == true:
+		not_idle = true
+		if Global.current_potion == 'AP Potion':
+			$AnimatedSprite2D.play('AP Potion')
+		elif Global.current_potion == 'HP Potion':
+			$AnimatedSprite2D.play('HP Potion')
+		elif Global.current_potion == 'DMG Potion':
+			$AnimatedSprite2D.play('DMG Potion')
+		await $AnimatedSprite2D.animation_finished
+		Global.drinkingpotion = false
+		not_idle = false
 
 func hurt():
 	if Global.enemyturn == true:

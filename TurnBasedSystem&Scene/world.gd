@@ -67,7 +67,7 @@ func _on_exit_attack_pressed():
 	$ActionsPanel.show()
 
 func _on_lightning_bolt_pressed(): #sword
-	Global.current_attack = 'Spear'
+	Global.current_attack = 'Sword'
 	if Global.actionpoints >= 2:
 		Global.playerattacking = true
 		crit = randi() % 100
@@ -119,7 +119,7 @@ func _on_wand_pressed():
 		$NoMoreAP.show()
 
 func _on_shield_pressed():
-	Global.current_attack = 'Hammer'
+	Global.current_attack = 'Shield'
 	if Global.actionpoints >= 1:
 		Global.playerattacking = true
 		Global.bbegcurrenthealth -= Global.shielddamage
@@ -242,6 +242,8 @@ func _on_health_potion_pressed():
 	if can_potion == false:
 		$Debuff.show()
 	elif Global.healthpotions != 0 and can_potion == true:
+		Global.current_potion = 'HP Potion'
+		Global.drinkingpotion = true
 		Global.healthpotions -= 1
 		if Global.playercurrenthealth >= Global.playermaxhealth * 0.7: #checks if player current health is above 70%
 			Global.playercurrenthealth = Global.playermaxhealth
@@ -255,6 +257,8 @@ func _on_ap_potion_pressed():
 	if can_potion == false:
 		$Debuff.show()
 	elif Global.appotions != 0 and can_potion == true:
+		Global.current_potion = 'AP Potion'
+		Global.drinkingpotion = true
 		Global.appotions -= 1
 		Global.actionpoints += 2
 
@@ -266,6 +270,8 @@ func _on_damage_potion_pressed():
 	if can_potion == false:
 		$Debuff.show()
 	elif Global.damagepotions != 0 and can_potion == true:
+		Global.current_potion = 'DMG Potion'
+		Global.drinkingpotion = true
 		damage_potion_consumed = true
 		Global.damagepotions -= 1
 		Global.sworddamage += 50
