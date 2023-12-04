@@ -1,7 +1,10 @@
-[gd_scene load_steps=26 format=3 uid="uid://de8b1jschuwwo"]
+[gd_scene load_steps=27 format=3 uid="uid://de8b1jschuwwo"]
 
 [ext_resource type="Script" path="res://script(walking map)/hero(walking_map).gd" id="1_atvds"]
 [ext_resource type="Texture2D" uid="uid://b7ail3h52vt3q" path="res://TurnBasedSystem&Scene/Placeholder Sprites/AnimationSheet_Character.png" id="1_rluv0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jyox8"]
+radius = 7.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v0wxa"]
 atlas = ExtResource("1_rluv0")
@@ -181,11 +184,23 @@ animations = [{
 }]
 
 [node name="hero(walking map)" type="CharacterBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_atvds")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(18, 18)
+shape = SubResource("CircleShape2D_jyox8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(29, 29)
+position = Vector2(19, 9)
 sprite_frames = SubResource("SpriteFrames_hy4hd")
 animation = &"collect_items"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+limit_left = 0
+limit_top = 0
+limit_right = 543
+limit_bottom = 256
+drag_horizontal_enabled = true
+drag_vertical_enabled = true

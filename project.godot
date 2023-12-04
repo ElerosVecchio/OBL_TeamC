@@ -24,6 +24,7 @@ buses/default_bus_layout="res://SoundManager/default_bus_layout.tres"
 
 ImportData="*res://Item scripts/ImportData.gd"
 Global="*res://TurnBasedSystem&Scene/Global.gd"
+Globalscriptscenetransition="*res://globalscriptscenetransition.gd"
 
 [display]
 
